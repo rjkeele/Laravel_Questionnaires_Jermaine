@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Education extends Model
+class TempInfoModel extends Model
 {
-  protected $table = "resourceeducation";
+  protected $table = 'temp_info_resume';
 }
