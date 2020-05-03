@@ -16,7 +16,7 @@
       </div>
       <br><br>
       <div class="text-center" id="div_schoolName_continue">
-        <button id="btn_schoolName_continue" class="btn btn-lg btn-success" type="submit"> CONTINUE </button>
+        <button id="btn_schoolName_continue" class="btn btn-lg btn-success" type="button"> CONTINUE </button>
       </div>
     </div>
   </div>
@@ -27,6 +27,20 @@
       $(document).ready(function () {
           $('#btn_schoolName_continue').click(function () {
               var schoolName = $('#input_schoolName').val();
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url:'/temp_info_save/schoolName',
+                  data: {
+                      'schoolName': schoolName
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success') {
+                          window.location.href = "/education/school/country";
+                      }
+                  }
+              });
           });
       });
   </script>

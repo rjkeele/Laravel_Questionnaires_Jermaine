@@ -23,7 +23,7 @@
         <div id="sidebar-menu">
           <ul id="menu-list">
             @foreach ($data['sections'] as $section)
-              <li><a href="/{{ $section -> sectionName }}"><img width="20" height="20"
+              <li id="sidelist_{{ $section->sectionOrder }}"><a href="/{{ $section -> sectionName }}"><img width="20" height="20"
                                                                 style="background-image: url('{{ $section -> sectionIconPath }}')"></img>{{ $section -> sectionName }}
                 </a></li>
             @endforeach
@@ -43,5 +43,11 @@
 <script src="{{ asset('/assets/plugin/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/assets/plugin/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/assets/js/main.js') }}"></script>
+<script>
+  $(document).ready(function () {
+      var sectionOrder = '{{ Session::get('section_order') }}';
+      $('#sidelist_' + sectionOrder).addClass('active');
+  });
+</script>
 @yield('js')
 </html>

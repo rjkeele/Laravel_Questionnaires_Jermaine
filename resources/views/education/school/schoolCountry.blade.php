@@ -12,7 +12,12 @@
         <label for="input_schoolCountry" id="label_input_schoolCountry">
           SCHOOL COUNTRY
         </label><br>
-        <input type="text" id="input_schoolCountry" name="schoolCountry" class="input-lg form-control-lg">
+        <input list="countryList" id="input_schoolCountry" name="schoolCountry" class="input-lg form-control-lg">
+        <datalist id="countryList">
+          @foreach($data['countries'] as $country)
+            <option value="{{ $country->resourceCountryName }}">{{ $country->resourceCountryName }}</option>
+          @endforeach
+        </datalist>
       </div>
       <br><br>
       <div class="text-center" id="div_schoolCountry_continue">
@@ -34,10 +39,13 @@
                       'schoolCountry': schoolCountry
                   },
                   type: 'post',
-                  success: function (success) {
-                      console.log('sss');
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success') {
+                          window.location.href = "/education/school/graduate";
+                      }
                   }
-              })
+              });
           });
       });
   </script>

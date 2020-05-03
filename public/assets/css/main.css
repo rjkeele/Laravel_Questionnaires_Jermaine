@@ -46,6 +46,7 @@ body {
 #menu-list li a {
   text-decoration: none;
   color: black;
+  font-weight: bold;
 }
 #menu-list li:hover {
   cursor: pointer;
@@ -86,4 +87,8 @@ body {
 }
 .form-control {
   margin-bottom: 10px;
+}
+.active {
+  background-color: #ebfaf3;
+  border-right: 3px solid #65c897;
 }

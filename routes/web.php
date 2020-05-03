@@ -66,5 +66,10 @@ Route::get('social/media', 'questionnaires\SocialController@media');
 Route::get('references', 'questionnaires\ReferenceController@index');
 
 Route::prefix('temp_info_save') -> group(function (){
+  Route::post('educationLevel', 'Form\TempFormController@educationLevel');
+  Route::post('schoolName', 'Form\TempFormController@schoolName');
+  Route::post('schoolCountry', 'Form\TempFormController@schoolCountry');
+  Route::post('graduated', 'Form\TempFormController@graduated');
+  Route::post('schoolPeriod', 'Form\TempFormController@schoolPeriod');
   Route::post('schoolCountry', 'Form\TempFormController@schoolCountry');
 });

@@ -34,12 +34,21 @@
   <script>
       $(document).ready(function () {
           $('.div_radio_button').click(function () {
-              $('.input_radio_button').removeAttr('checked');
               var graduated = $(this).parent().attr('data-id');
-              $('.input_radio_button').val(graduated);
-              // var sss = $('.input_radio_button').val();
-              $('#input_hidden_graduate').val(graduated);
-              window.location.href = "/education/school/period";
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/graduated',
+                  data: {
+                      'graduated': graduated
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success') {
+                          window.location.href = "/education/school/period";
+                      }
+                  }
+              });
           });
       });
   </script>

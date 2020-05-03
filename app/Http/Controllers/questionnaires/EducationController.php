@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Education;
 use App\Models\Section;
+use App\Models\CountryModel;
+use Session;
 
 class EducationController extends Controller
 {
@@ -28,6 +30,7 @@ class EducationController extends Controller
   public function schoolCountry()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['countries'] = CountryModel::all();
     return view('education/school/schoolCountry', compact("data"));
   }
 
