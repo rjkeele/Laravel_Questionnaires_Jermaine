@@ -84,3 +84,6 @@ body {
 .input-lg {
   width: 70%;
 }
+.form-control {
+  margin-bottom: 10px;
+}

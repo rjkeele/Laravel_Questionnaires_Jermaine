@@ -27,6 +27,7 @@
       $(document).ready(function () {
           $('#btn_companyName_continue').click(function () {
               var companyName = $('#input_companyName').val();
+              window.location.href = '/workExperience/journey1/country';
           });
       });
   </script>
