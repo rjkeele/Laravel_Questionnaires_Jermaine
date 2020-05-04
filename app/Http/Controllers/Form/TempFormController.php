@@ -145,7 +145,18 @@ class TempFormController extends Controller
     $jobStartMonth = $request->input('jobStartMonth');
     $jobStartYear = $request->input('jobStartYear');
     $update_data = array(
-      'journey1StartJob' => $jobStartMonth.' '.$jobStartYear,
+      'journey1StartJob' => $jobStartMonth . ' ' . $jobStartYear,
+      'last_url' => '/workExperience/journey1/duty'
+    );
+    TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
+    return 'success';
+  }
+
+  public function journey1Duty(Request $request)
+  {
+    $companyDuty = $request -> input('companyDuty');
+    $update_data = array(
+      'journey1Duty' => $companyDuty,
       'last_url' => '/workExperience/journey1/duty'
     );
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);

@@ -34,7 +34,8 @@ Route::prefix('workExperience')->group(function (){
     Route::get('city', 'questionnaires\WorkExperienceController@journey1City');
     Route::get('job', 'questionnaires\WorkExperienceController@journey1Job');
     Route::get('startJob', 'questionnaires\WorkExperienceController@journey1startJob');
-
+    Route::get('duty', 'questionnaires\WorkExperienceController@journey1Duty');
+    Route::get('review', 'questionnaires\WorkExperienceController@journey1Review');
   });
   Route::prefix('journey2') -> group(function (){
     Route::get('lastJob', 'questionnaires\WorkExperienceController@journey2lastJob');
@@ -82,6 +83,7 @@ Route::prefix('temp_info_save') -> group(function (){
       Route::post('city', 'Form\TempFormController@journey1City');
       Route::post('job', 'Form\TempFormController@journey1Job');
       Route::post('jobStart', 'Form\TempFormController@journey1JobStart');
+      Route::post('duty', 'Form\TempFormController@journey1Duty');
     });
   });
 });

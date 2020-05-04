@@ -49,6 +49,18 @@ class WorkExperienceController extends Controller
     return view('workExperience/journey1/startJob', compact("data"));
   }
 
+  public function journey1Duty()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    return view('workExperience/journey1/duty', compact("data"));
+  }
+
+  public function journey1Review()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    return view('workExperience/journey1/review', compact("data"));
+  }
+
   public function journey2lastJob()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();

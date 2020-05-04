@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What Were Your Main Duties & Achievements at {employerName}?
+      What Were Your Main Duties & Achievements at {{ Session::get('journey1Company') }}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -12,7 +12,7 @@
         <label for="input_companyDuty" id="label_input_companyDuty">
           JOB DUTIES & ACHIEVEMENTS
         </label><br>
-        <textarea type="text" id="input_companyDuty" name="companyDuty" class="input-lg form-control-lg"></textarea>
+        <textarea rows="5" type="text" id="input_companyDuty" name="companyDuty" class="input-lg"></textarea>
       </div>
       <br><br>
       <div class="text-center" id="div_companyDuty_continue">
@@ -27,7 +27,19 @@
       $(document).ready(function () {
           $('#btn_companyDuty_continue').click(function () {
               var companyDuty = $('#input_companyDuty').val();
-              window.location.href = '/workExperience/journey1/startJob';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey1/duty',
+                  data: {
+                      'companyDuty': companyDuty,
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey1/review';
+                  }
+              });
           });
       });
   </script>

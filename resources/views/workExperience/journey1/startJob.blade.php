@@ -58,7 +58,6 @@
           $('#btn_companyStartJob_continue').click(function () {
               var jobStartMonth = $('#startMonth').val();
               var jobStartYear = $('#startYear').val();
-              // alert(jobStartMonth);
               $.ajax({
                   headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
                   url: '/temp_info_save/workExperience/journey1/jobStart',
