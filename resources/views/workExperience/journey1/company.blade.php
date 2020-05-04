@@ -27,7 +27,18 @@
       $(document).ready(function () {
           $('#btn_companyName_continue').click(function () {
               var companyName = $('#input_companyName').val();
-              window.location.href = '/workExperience/journey1/country';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey1/company',
+                  data: {
+                      'companyName': companyName
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey1/country';                  }
+              });
           });
       });
   </script>

@@ -92,3 +92,11 @@ body {
   background-color: #ebfaf3;
   border-right: 3px solid #65c897;
 }
+.isDisabled {
+  pointer-events: none;
+  color: currentColor;
+  opacity: 0.6;
+}
+.cursorDisabled {
+  cursor: not-allowed;
+}

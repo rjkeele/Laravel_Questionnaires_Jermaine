@@ -26,8 +26,21 @@
   <script>
       $(document).ready(function () {
           $('#btn_schoolCourse_continue').click(function () {
-              var schoolName = $('#input_schoolCourse').val();
-              window.location.href = '/education/school/qualification';
+              var schoolCourse = $('#input_schoolCourse').val();
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/schoolCourse',
+                  data: {
+                      'schoolCourse': schoolCourse,
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success') {
+                          window.location.href = '/education/school/qualification';
+                      }
+                  }
+              });
           });
       });
   </script>

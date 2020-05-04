@@ -5,6 +5,8 @@ namespace App\Http\Controllers\questionnaires;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Section;
+use App\Models\CountryModel;
+use Session;
 
 class WorkExperienceController extends Controller
 {
@@ -25,6 +27,7 @@ class WorkExperienceController extends Controller
   public function journey1Country()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['countries'] = CountryModel::all();
     return view('workExperience/journey1/country', compact("data"));
   }
 

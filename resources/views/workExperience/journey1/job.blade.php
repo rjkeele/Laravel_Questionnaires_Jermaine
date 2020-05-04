@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What was your job title at {employmentCompany}?
+      What was your job title at {{ Session::get('journey1Company') }}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -16,7 +16,7 @@
       </div>
       <br><br>
       <div class="text-center" id="div_companyJob_continue">
-        <button id="btn_companyJob_continue" class="btn btn-lg btn-success" type="button"> CONTINUE </button>
+        <button id="btn_companyJob_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
       </div>
     </div>
   </div>
@@ -27,7 +27,19 @@
       $(document).ready(function () {
           $('#btn_companyJob_continue').click(function () {
               var companyJob = $('#input_companyJob').val();
-              window.location.href = '/workExperience/journey1/startJob';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey1/job',
+                  data: {
+                      'companyJob': companyJob
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey1/startJob';
+                  }
+              });
           });
       });
   </script>

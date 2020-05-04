@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center" style="width: 80%;min-width: 250px">
     <div id="content-header">
-      Great When Did You Start Studying At {schoolName}?
+      When Did Your Start Your Job At {{ Session::get('journey1Company') }}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -15,18 +15,18 @@
           <div class="col-6 form-group">
             <label for="startMonth">START MONTH</label><br>
             <select class="form-control" id="startMonth" name="startMonth">
-              <option value="1">January</option>
-              <option value="2">February</option>
-              <option value="3">March</option>
-              <option value="4">April</option>
-              <option value="5">May</option>
-              <option value="6">June</option>
-              <option value="7">July</option>
-              <option value="8">August</option>
-              <option value="9">September</option>
-              <option value="10">October</option>
-              <option value="11">November</option>
-              <option value="12">December</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
             </select>
           </div>
         </div>
@@ -56,8 +56,23 @@
   <script>
       $(document).ready(function () {
           $('#btn_companyStartJob_continue').click(function () {
-              // var schoolName = $('#input_schoolName').val();
-              window.location.href = '/workExperience/journey1/duty';
+              var jobStartMonth = $('#startMonth').val();
+              var jobStartYear = $('#startYear').val();
+              // alert(jobStartMonth);
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey1/jobStart',
+                  data: {
+                      'jobStartMonth': jobStartMonth,
+                      'jobStartYear': jobStartYear
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey1/duty';
+                  }
+              });
           });
       });
   </script>

@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center" style="width: 80%;min-width: 250px">
     <div id="content-header">
-      Great When Did You Start Studying At {schoolName}?
+      Great When Did You Start Studying At {{Session::get('schoolName')}}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -39,36 +39,40 @@
           <br>TO
         </div>
         <div class="col-5 row">
-          <div class="col-6 form-group">
-            <label for="endMonth">END MONTH</label><br>
-            <select class="form-control" id="endMonth" name="endMonth">
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
-            </select>
-          </div>
-          <div class="col-6 form-group">
-            <label for="endYear">END YEAR</label><br>
-            <select class="form-control" name="endYear" id="endYear">
-              @for($i = 2020; $i >= 1950; $i--)
-                <option value="{{ $i }}">{{ $i }}</option>
-              @endfor
-            </select>
-          </div>
+          @if(Session::get('schoolGraduate') == 'no')
+            <h5 style="position: relative; top: 25px;">PRESENT</h5>
+          @else
+            <div class="col-6 form-group">
+              <label for="endMonth">END MONTH</label><br>
+              <select class="form-control" id="endMonth" name="endMonth">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+            </div>
+            <div class="col-6 form-group">
+              <label for="endYear">END YEAR</label><br>
+              <select class="form-control" name="endYear" id="endYear">
+                @for($i = 2020; $i >= 1950; $i--)
+                  <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+              </select>
+            </div>
+          @endif
         </div>
       </div>
       <br><br>
       <div class="text-center" id="div_schoolName_continue">
-        <button id="btn_schoolPeriod_continue" class="btn btn-lg btn-success" type="button"> CONTINUE </button>
+        <button id="btn_schoolPeriod_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
       </div>
     </div>
   </div>
@@ -77,11 +81,17 @@
 @section('js')
   <script>
       $(document).ready(function () {
+          var graduated = '{{ Session::get('schoolGraduate') }}';
           $('#btn_schoolPeriod_continue').click(function () {
               var startMonth = $('#startMonth').val();
               var startYear = $('#startYear').val();
-              var endMonth = $('#endMonth').val();
-              var endYear = $('#endYear').val();
+              if (graduated === 'no') {
+                  var endMonth = 'present';
+                  var endYear = 'present';
+              } else {
+                  var endMonth = $('#endMonth').val();
+                  var endYear = $('#endYear').val();
+              }
               $.ajax({
                   headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
                   url: '/temp_info_save/schoolPeriod',

@@ -34,12 +34,22 @@
   <script>
       $(document).ready(function () {
           $('.div_radio_button').click(function () {
-              $('.input_radio_button').removeAttr('checked');
-              var graduated = $(this).parent().attr('data-id');
-              $('.input_radio_button').val(graduated);
-              // var sss = $('.input_radio_button').val();
-              $('#input_hidden_graduate').val(graduated);
-              window.location.href = "/workExperience/journey1/company";
+              var workingNow = $(this).parent().attr('data-id');
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/workingNow',
+                  data: {
+                      'workingNow': workingNow
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'yes')
+                          window.location.href = "/workExperience/journey1/company";
+                      else
+                          window.location.href = "/workExperience/journey2/lastJob";
+                  }
+              });
           });
       });
   </script>

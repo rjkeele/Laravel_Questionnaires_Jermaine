@@ -23,9 +23,20 @@
         <div id="sidebar-menu">
           <ul id="menu-list">
             @foreach ($data['sections'] as $section)
-              <li id="sidelist_{{ $section->sectionOrder }}"><a href="/{{ $section -> sectionName }}"><img width="20" height="20"
-                                                                style="background-image: url('{{ $section -> sectionIconPath }}')"></img>{{ $section -> sectionName }}
-                </a></li>
+              @if($section -> sectionOrder > Session::get('section_order'))
+                <div class="cursorDisabled">
+                  <li id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" class="sidelist isDisabled"><a
+                        href="{{ $section -> startUrl }}"><img width="20" height="20"
+                                                               style="background-image: url('{{ $section -> sectionIconPath }}')"></img>{{ $section -> sectionName }}
+                    </a></li>
+                </div>
+
+              @else
+                <li id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" class="sidelist"><a
+                      href="{{ $section -> startUrl }}"><img width="20" height="20"
+                                                             style="background-image: url('{{ $section -> sectionIconPath }}')"></img>{{ $section -> sectionName }}
+                  </a></li>
+              @endif
             @endforeach
           </ul>
         </div>
@@ -44,10 +55,28 @@
 <script src="{{ asset('/assets/plugin/js/jquery.min.js') }}"></script>
 <script src="{{ asset('/assets/js/main.js') }}"></script>
 <script>
-  $(document).ready(function () {
-      var sectionOrder = '{{ Session::get('section_order') }}';
-      $('#sidelist_' + sectionOrder).addClass('active');
-  });
+    $(document).ready(function () {
+        var sectionId = '{{ Session::get('section_id') }}';
+        $('.sidelist').removeClass('active');
+        $('#sidelist_' + sectionId).addClass('active');
+        var sectionOrder = '{{ Session::get('section_order') }}';
+        console.log(sectionOrder);
+        $('.sidelist').click(function () {
+            var sectionId = $(this).attr('data-id');
+            $.ajax({
+                headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                url: '/moveToAnotherSection',
+                data: {
+                    'sectionId': sectionId
+                },
+                type: 'post',
+                async: true,
+                success: function (result) {
+                    window.location.href = result;
+                }
+            });
+        })
+    });
 </script>
 @yield('js')
 </html>

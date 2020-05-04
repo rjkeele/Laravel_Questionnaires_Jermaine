@@ -71,5 +71,20 @@ Route::prefix('temp_info_save') -> group(function (){
   Route::post('schoolCountry', 'Form\TempFormController@schoolCountry');
   Route::post('graduated', 'Form\TempFormController@graduated');
   Route::post('schoolPeriod', 'Form\TempFormController@schoolPeriod');
-  Route::post('schoolCountry', 'Form\TempFormController@schoolCountry');
+  Route::post('schoolCourse', 'Form\TempFormController@schoolCourse');
+  Route::post('schoolQualification', 'Form\TempFormController@schoolQualification');
+
+  Route::prefix('workExperience') -> group(function (){
+    Route::post('workingNow', 'Form\TempFormController@workingNow');
+    Route::prefix('journey1') -> group(function (){
+      Route::post('company', 'Form\TempFormController@journey1Company');
+      Route::post('country', 'Form\TempFormController@journey1Country');
+      Route::post('city', 'Form\TempFormController@journey1City');
+      Route::post('job', 'Form\TempFormController@journey1Job');
+      Route::post('jobStart', 'Form\TempFormController@journey1JobStart');
+    });
+  });
 });
+
+Route::post('moveToNextSection', 'questionnaires\HomeController@moveToNextSection');
+Route::post('moveToAnotherSection', 'questionnaires\HomeController@moveToAnotherSection');
