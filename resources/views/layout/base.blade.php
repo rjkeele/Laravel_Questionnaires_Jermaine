@@ -57,10 +57,10 @@
 <script>
     $(document).ready(function () {
         var sectionId = '{{ Session::get('section_id') }}';
+        console.log(sectionId);
         $('.sidelist').removeClass('active');
         $('#sidelist_' + sectionId).addClass('active');
         var sectionOrder = '{{ Session::get('section_order') }}';
-        console.log(sectionOrder);
         $('.sidelist').click(function () {
             var sectionId = $(this).attr('data-id');
             $.ajax({

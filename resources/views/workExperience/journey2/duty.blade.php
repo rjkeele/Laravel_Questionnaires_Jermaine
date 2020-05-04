@@ -12,7 +12,7 @@
         <label for="input_companyDuty" id="label_input_companyDuty">
           JOB DUTIES & ACHIEVEMENTS
         </label><br>
-        <textarea rows="5" type="text" id="input_companyDuty" name="companyDuty" class="input-lg form-control-lg"></textarea>
+        <textarea rows="5" type="text" id="input_companyDuty" name="companyDuty" class="input-lg"></textarea>
       </div>
       <br><br>
       <div class="text-center" id="div_companyDuty_continue">
@@ -27,7 +27,19 @@
       $(document).ready(function () {
           $('#btn_companyDuty_continue').click(function () {
               var companyDuty = $('#input_companyDuty').val();
-              window.location.href = '/workExperience/journey2/startJob';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey2/duty',
+                  data: {
+                      'companyDuty': companyDuty,
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey2/review';
+                  }
+              });
           });
       });
   </script>

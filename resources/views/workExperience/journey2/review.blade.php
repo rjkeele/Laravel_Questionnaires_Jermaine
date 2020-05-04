@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      Great! You've Just Added {{Session::get('journey1Company')}}
+      Great! You've Just Added {{Session::get('journey2Company')}}
     </div>
     <div>
       {{--Do you want to add another school, Employers usually like to see details of two schools you've been to!--}}

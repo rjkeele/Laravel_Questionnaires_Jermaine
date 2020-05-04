@@ -16,7 +16,7 @@
       </div>
       <br><br>
       <div class="text-center" id="div_companyDuty_continue">
-        <button id="btn_companyDuty_continue" class="btn btn-lg btn-success" type="button"> CONTINUE </button>
+        <button id="btn_companyDuty_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
       </div>
     </div>
   </div>

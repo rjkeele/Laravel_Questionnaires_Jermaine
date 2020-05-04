@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      Show Off! What Are Your Top 5 Professional Skills Relevant to Your New {userJobTitle) Role?
+      Show Off! What Are Your Top 5 Professional Skills Relevant to Your New {{ Session::get('newJob') }} Role?
     </div>
     <div id="content-subheader">
       Rate yourself out of 5. Give yourself a 5 if you’re an expert & 1 if you’re a Beginner
@@ -52,8 +52,8 @@
       </div>
 
       <br><br>
-      <div class="text-center" id="div_personalSummary_continue">
-        <button id="btn_personalSummary_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
+      <div class="text-center" id="div_professional_continue">
+        <button id="btn_professional_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
       </div>
     </div>
   </div>
@@ -62,9 +62,44 @@
 @section('js')
   <script>
       $(document).ready(function () {
-          $('#btn_personalSummary_continue').click(function () {
-              var personalSummary = $('#input_personalSummary').val();
-              window.location.href = '/personal';
+          $('#btn_professional_continue').click(function () {
+              var sectionId = '{{ Session::get('section_id') }}';
+              var skillName1 = $('#skillName1').val();
+              var skillName2 = $('#skillName2').val();
+              var skillName3 = $('#skillName3').val();
+              var skillName4 = $('#skillName4').val();
+              var skillName5 = $('#skillName5').val();
+              var skillRating1 = $('#skillRating1').val();
+              var skillRating2 = $('#skillRating2').val();
+              var skillRating3 = $('#skillRating3').val();
+              var skillRating4 = $('#skillRating4').val();
+              var skillRating5 = $('#skillRating5').val();
+              if (skillName1 === '' || skillName2 === '' || skillName3 === '' || skillRating1 === '' || skillRating2 === '' || skillRating3 === '') {
+                  alert('Please input 3 skills at least');
+              }
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/professional',
+                  data: {
+                      'skillName1': skillName1,
+                      'skillName2': skillName2,
+                      'skillName3': skillName3,
+                      'skillName4': skillName4,
+                      'skillName5': skillName5,
+                      'skillRating1': skillRating1,
+                      'skillRating2': skillRating2,
+                      'skillRating3': skillRating3,
+                      'skillRating4': skillRating4,
+                      'skillRating5': skillRating5,
+                      'section_id': sectionId
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      // alert(result);
+                      window.location.href = result;
+                  }
+              });
           });
       });
   </script>

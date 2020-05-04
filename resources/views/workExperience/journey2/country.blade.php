@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What Country is {employmentCompany} in?
+      What Country is {{ Session::get('journey2Company') }} in?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -12,7 +12,12 @@
         <label for="input_companyCountry" id="label_input_companyCountry">
           COMPANY COUNTRY
         </label><br>
-        <input type="text" id="input_companyCountry" name="companyCountry" class="input-lg form-control-lg">
+        <input list="countries" id="input_companyCountry" name="companyCountry" class="input-lg form-control-lg">
+        <datalist id="countries">
+          @foreach($data['countries'] as $country)
+            <option value="{{ $country -> resourceCountryName }}">{{ $country -> resourceCountryName }}</option>
+          @endforeach
+        </datalist>
       </div>
       <br><br>
       <div class="text-center" id="div_companyCountry_continue">
@@ -26,8 +31,20 @@
   <script>
       $(document).ready(function () {
           $('#btn_companyCountry_continue').click(function () {
-              var company = $('#input_companyCountry').val();
-              window.location.href = '/workExperience/journey2/city';
+              var companyCountry = $('#input_companyCountry').val();
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey2/country',
+                  data: {
+                      'companyCountry': companyCountry
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey2/city';
+                  }
+              });
           });
       });
   </script>

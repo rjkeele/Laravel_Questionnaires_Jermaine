@@ -27,7 +27,18 @@
       $(document).ready(function () {
           $('#btn_newJob_continue').click(function () {
               var newJob = $('#input_newJob').val();
-              window.location.href = '/profile/personal';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/profile/newJob',
+                  data: {
+                      'newJob': newJob
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      window.location.href = '/profile/personal';
+                  }
+              });
           });
       });
   </script>

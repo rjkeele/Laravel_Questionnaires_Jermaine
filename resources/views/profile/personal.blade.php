@@ -14,7 +14,7 @@
             PERSONAL SUMMARY - MAX.200 WORDS
           </label><br>
           <textarea rows="5" type="text" id="input_personalSummary" name="personalSummary"
-                    class="input-lg form-control-lg"></textarea>
+                    class="input-lg"></textarea>
         </div>
         <div class="col-5 form-group">
           <label for="input_personalExample" id="label_input_personalExample">
@@ -42,7 +42,21 @@
       $(document).ready(function () {
           $('#btn_personalSummary_continue').click(function () {
               var personalSummary = $('#input_personalSummary').val();
-              window.location.href = '/profile/newJob';
+              var sectionId = '{{ Session::get('section_id') }}';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/profile/personalSummary',
+                  data: {
+                      'personalSummary': personalSummary,
+                      'section_id': sectionId
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      // console.log(result);
+                      window.location.href = result;
+                  }
+              });
           });
       });
   </script>

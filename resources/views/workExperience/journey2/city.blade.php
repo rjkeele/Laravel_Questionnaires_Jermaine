@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What Town/City of {employmentCountry} is {employmentCompany} in?
+      What Town/City of {{ Session::get('journey2Country') }} is {{ Session::get('journey2Company') }} in?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -16,7 +16,7 @@
       </div>
       <br><br>
       <div class="text-center" id="div_companyCity_continue">
-        <button id="btn_companyCity_continue" class="btn btn-lg btn-success" type="button"> CONTINUE </button>
+        <button id="btn_companyCity_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
       </div>
     </div>
   </div>
@@ -27,7 +27,19 @@
       $(document).ready(function () {
           $('#btn_companyCity_continue').click(function () {
               var companyCity = $('#input_companyCity').val();
-              window.location.href = '/workExperience/journey2/job';
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/workExperience/journey2/city',
+                  data: {
+                      'companyCity': companyCity
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/workExperience/journey2/job';
+                  }
+              });
           });
       });
   </script>

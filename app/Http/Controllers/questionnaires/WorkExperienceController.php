@@ -76,6 +76,7 @@ class WorkExperienceController extends Controller
   public function journey2Country()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['countries'] = CountryModel::all();
     return view('workExperience/journey2/country', compact("data"));
   }
 
@@ -95,5 +96,11 @@ class WorkExperienceController extends Controller
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
     return view('workExperience/journey2/duty', compact("data"));
+  }
+
+  public function journey2Review()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    return view('workExperience/journey2/review', compact("data"));
   }
 }

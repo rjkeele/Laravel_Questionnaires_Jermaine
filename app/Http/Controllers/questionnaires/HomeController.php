@@ -76,7 +76,7 @@ class HomeController extends Controller
     $section_id = (int)$request->input('sectionId');
     Session::put('section_id', $section_id);
     $section = Section::where('sectionId', $section_id)->get();
-    $section_order = $section[0]->sectionOrder;
+//    $section_order = $section[0]->sectionOrder;
     $nextUrl = $section[0]->startUrl;
     return $nextUrl;
   }
