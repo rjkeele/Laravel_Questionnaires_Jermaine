@@ -1,77 +1,98 @@
 body {
   background-color: #f9fbfa;
   height: 100%;
+  margin: 0;
 }
+
 .full-height {
   height: 100vh;
   width: 100%;
 }
+
 #page_header {
-  /*flex: 0 0 auto;*/
   border-bottom: 1px solid black;
   padding-top: auto;
   padding-left: 35px;
-  /*margin-left: -15px;*/
-  /*margin-right: -15px;*/
+  height: 60px;
 }
+
 #page_header h1 {
   font-size: 40px;
   font-weight: 700;
   color: darkred;
 }
+
 #main-container {
   width: 100%;
-  height: 90vh;
+  height: 100%;
   position: relative;
-  overflow-y: auto;
+  top: -60px;
+  padding-top: 60px;
 }
+
+#main-container .row {
+  height: 100%;
+}
+
 #sidebar {
   width: 20%;
   border-right: 1px solid black;
   background-color: white;
-  min-height: 90vh;
+  height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
 }
+
 #main-content {
   height: 100%;
   width: 80%;
 }
+
 #menu-list {
   list-style-type: none;
   padding-top: 30px;
+  padding-bottom: 100px;
 }
+
 #menu-list li {
   padding: 15px 15px;
 }
+
 #menu-list li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
+
 #menu-list li:hover {
   cursor: pointer;
   background-color: #f9fbfa;
 }
+
 #menu-list li img {
   position: relative;
-  /*top: 2px;*/
   margin-right: 10px;
 }
+
 #content-header {
   font-size: 40px;
   font-weight: bold;
 }
+
 #content-header {
   margin-top: 50px;
 }
+
 .input_radio_button {
   width: 0px;
   height: 0px;
 }
+
 .div_radio_button:hover {
   border: 1px solid #65c897;
   color: #65c897;
 }
+
 .div_radio_button {
   width: 150px;
   height: 150px;
@@ -79,24 +100,86 @@ body {
   border-radius: 5px;
   background-color: #ffffff;
 }
+
 #div_schoolName_continue {
   width: 100%;
 }
+
 .input-lg {
   width: 70%;
 }
+
 .form-control {
   margin-bottom: 10px;
 }
+
 .active {
   background-color: #ebfaf3;
   border-right: 3px solid #65c897;
 }
+
 .isDisabled {
   pointer-events: none;
   color: currentColor;
   opacity: 0.6;
 }
+
 .cursorDisabled {
   cursor: not-allowed;
+}
+
+#div_hidden_btns {
+  position: relative;
+  bottom: 10px;
+  left: 30px;
+  padding-bottom: 10px;
+}
+
+#menu-toggle {
+  margin-right: 35px;
+  height: 40px;
+  /*margin-top: 10px;*/
+  position: fixed;
+  top: 10px;
+  display: none;
+  right: 10px;
+  cursor: pointer!important;
+}
+
+@media (max-width: 1300px) {
+  #sidebar {
+    width: 25%;
+  }
+  #main-content {
+    width: 75%;
+  }
+}
+
+@media (max-width: 1100px) {
+  #sidebar {
+    width: 350px;
+    margin-left: -350px;
+    /*width: 0!important;*/
+  }
+  #main-content {
+    width: 100%;
+  }
+  #menu-toggle {
+    display: block;
+  }
+}
+
+#sidebar.toggled {
+  width: 350px;
+  margin-left: 0px;
+  z-index: 99999;
+}
+#main-content.toggled {
+  z-index: -99999;
+  margin-left: -350px;
+  opacity: 0.6;
+}
+.progress {
+  position: relative;
+  bottom: 15px;
 }

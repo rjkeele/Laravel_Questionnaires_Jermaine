@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\questionnaires;
 
 use App\Http\Controllers\Controller;
+use App\Models\TempInfoModel;
 use Illuminate\Http\Request;
 use App\Models\Education;
 use App\Models\Section;
@@ -17,6 +18,8 @@ class EducationController extends Controller
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
     $data['educations'] = Education::orderBy('resourceEducationId', 'asc')->get();
+
+    Session::put('schoolNum', 1);
 
     return view('education/education', compact("data"));
   }
@@ -57,6 +60,13 @@ class EducationController extends Controller
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
     return view('education/school/schoolQualification', compact("data"));
   }
+
+  public function schoolAdd(){
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+//    $data['schools'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
+    return view('education/school/schoolAdd', compact("data"));
+  }
+
   public function schoolReview()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();

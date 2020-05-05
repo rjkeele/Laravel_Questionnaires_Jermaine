@@ -13,7 +13,7 @@
           <input type="radio" name="graduate" id="graduate"
                  class="input_radio_button" value="yes">
           <div class="div_radio_button text-center">
-            <img src="" alt="image" height="80" style="margin-bottom: 20px">
+            <img src="{{ asset('/assets/icons/tick.svg') }}" alt="image" height="60" style="margin-bottom: 20px; margin-top: 15px">
             <h6>Yes, I'm Employed</h6>
           </div>
         </label>
@@ -21,7 +21,7 @@
           <input type="radio" name="graduate" id="studying"
                  class="input_radio_button" value="no">
           <div class="div_radio_button text-center" style="position:relative; top:19px">
-            <img src="" alt="image" height="80" style="margin-bottom: 20px">
+            <img src="{{ asset('/assets/icons/cancel.svg') }}" alt="image" height="60" style="margin-bottom: 20px; margin-top: 15px">
             <h6>No, 24/7 Netflix & Chill</h6>
           </div>
         </label>

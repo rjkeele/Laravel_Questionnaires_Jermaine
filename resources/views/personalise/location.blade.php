@@ -13,7 +13,12 @@
             <label for="input_country" id="label_input_country">
               COUNTRY
             </label><br>
-            <input type="text" id="input_country" name="country" class="input-lg form-control-lg">
+            <input list="countryList" id="input_country" name="country" class="input-lg form-control-lg">
+            <datalist id="countryList">
+              @foreach($data['countries'] as $country)
+                <option value="{{ $country->resourceCountryName }}">{{ $country->resourceCountryName }}</option>
+              @endforeach
+            </datalist>
           </div>
         </div>
 
@@ -49,8 +54,24 @@
   <script>
       $(document).ready(function () {
           $('#btn_location_continue').click(function () {
-              // var contact = $('#input_schoolName').val();
-              window.location.href = '/personalise/website';
+              var country = $('#input_country').val();
+              var city = $('#input_city').val();
+              var addressLine = $('#input_addressLine').val();
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/personalise/location',
+                  data: {
+                      'country': country,
+                      'city': city,
+                      'addressLine': addressLine,
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/personalise/website';
+                  }
+              });
           });
       });
   </script>

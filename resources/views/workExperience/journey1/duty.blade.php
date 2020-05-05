@@ -37,7 +37,7 @@
                   async: true,
                   success: function (result) {
                       if (result === 'success')
-                          window.location.href = '/workExperience/journey1/review';
+                          window.location.href = '/workExperience/journey1/addJob';
                   }
               });
           });

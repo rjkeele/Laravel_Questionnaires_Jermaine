@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What Were Your Main Duties & Achievements at {{ Session::get('journey1Company') }}?
+      What Were Your Main Duties & Achievements at {{ Session::get('journey2Company') }}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
@@ -37,7 +37,7 @@
                   async: true,
                   success: function (result) {
                       if (result === 'success')
-                          window.location.href = '/workExperience/journey2/review';
+                          window.location.href = '/workExperience/journey2/addJob';
                   }
               });
           });

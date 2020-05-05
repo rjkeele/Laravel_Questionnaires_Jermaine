@@ -32,20 +32,24 @@
       $(document).ready(function () {
           $('#btn_schoolCountry_continue').click(function () {
               var schoolCountry = $('#input_schoolCountry').val();
-              $.ajax({
-                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                  url: '/temp_info_save/schoolCountry',
-                  data: {
-                      'schoolCountry': schoolCountry
-                  },
-                  type: 'post',
-                  async: true,
-                  success: function (result) {
-                      if (result === 'success') {
-                          window.location.href = "/education/school/graduate";
+              if (schoolCountry === ''){
+                  alert('Please input the field.');
+              } else {
+                  $.ajax({
+                      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                      url: '/temp_info_save/schoolCountry',
+                      data: {
+                          'schoolCountry': schoolCountry
+                      },
+                      type: 'post',
+                      async: true,
+                      success: function (result) {
+                          if (result === 'success') {
+                              window.location.href = "/education/school/graduate";
+                          }
                       }
-                  }
-              });
+                  });
+              }
           });
       });
   </script>

@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What was your job title at {{ Session::get('journey1Company') }}?
+      What is your job title at {{ Session::get('journey1Company') }}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">

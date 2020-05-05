@@ -27,20 +27,26 @@
       $(document).ready(function () {
           $('#btn_schoolName_continue').click(function () {
               var schoolName = $('#input_schoolName').val();
-              $.ajax({
-                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                  url:'/temp_info_save/schoolName',
-                  data: {
-                      'schoolName': schoolName
-                  },
-                  type: 'post',
-                  async: true,
-                  success: function (result) {
-                      if (result === 'success') {
-                          window.location.href = "/education/school/country";
+              var schoolNum = '{{ Session::get('schoolNum') }}';
+              if (schoolName === ''){
+                  alert('Please input the School Name.');
+              } else {
+                  $.ajax({
+                      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                      url:'/temp_info_save/schoolName',
+                      data: {
+                          'schoolName': schoolName,
+                          'schoolNum': schoolNum
+                      },
+                      type: 'post',
+                      async: true,
+                      success: function (result) {
+                          if (result === 'success') {
+                              window.location.href = "/education/school/country";
+                          }
                       }
-                  }
-              });
+                  });
+              }
           });
       });
   </script>

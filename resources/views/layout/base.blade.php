@@ -14,12 +14,12 @@
 </head>
 <body>
 <div class="flex-center position-ref full-height">
-  <header id="page_header">
+  <div id="page_header">
     <h1>Resume <strong>Genius</strong></h1>
-  </header>
+  </div>
   <div id="main-container" class="container-fluid">
     <div class="row">
-      <div class="col-3" id="sidebar">
+      <div id="sidebar">
         <div id="sidebar-menu">
           <ul id="menu-list">
             @foreach ($data['sections'] as $section)
@@ -40,12 +40,23 @@
             @endforeach
           </ul>
         </div>
+        <div id="div_hidden_btns" style="display: none">
+          <button class="btn btn-success"> Finish </button>
+          <button class="btn btn-info"> Download </button>
+          <button class="btn btn-primary" id="menu-toggle">Menu</button>
+          <br><br>
+        </div>
+        <div class="progress" style="width:80%; margin-left: 10% ">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: {{ round((int)Session::get('section_order')*100/12) }}%">
+            {{ round((int)Session::get('section_order')*100/12) }}%
+          </div>
+        </div>
       </div>
-      <div class="col-8" id="main-content">
-        <form action="{{ url('/form/') }}" method="post" id="main-form">
-          {{ csrf_field() }}
+      <div id="main-content">
+        {{--<form method="post" id="main-form">--}}
+{{--          {{ csrf_field() }}--}}
           @yield('content')
-        </form>
+        {{--</form>--}}
       </div>
     </div>
   </div>
@@ -75,8 +86,14 @@
                     window.location.href = result;
                 }
             });
-        })
+        });
     });
+
+    $('#menu-toggle').click(function (e) {
+        e.preventDefault();
+        $('#sidebar').toggleClass('toggled');
+        $('#main-content').toggleClass('toggled');
+    })
 </script>
 @yield('js')
 </html>

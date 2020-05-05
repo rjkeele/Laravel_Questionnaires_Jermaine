@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\questionnaires;
 
 use App\Http\Controllers\Controller;
+use App\Models\TempInfoModel;
 use Illuminate\Http\Request;
 use App\Models\Section;
 use App\Models\CountryModel;
@@ -15,12 +16,24 @@ class WorkExperienceController extends Controller
   public function workingNow()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+
+    Session::put('jobNum', 1);
+    Session::put('job1Num', 0);
+
     return view('workExperience/workingNow', compact("data"));
+  }
+
+  public function addJob()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    return view('workExperience/addJob', compact("data"));
   }
 
   public function journey1Company()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+
+    Session::put('job1Num', 1);
     return view('workExperience/journey1/company', compact("data"));
   }
 
@@ -53,6 +66,12 @@ class WorkExperienceController extends Controller
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
     return view('workExperience/journey1/duty', compact("data"));
+  }
+
+  public function journey1AddJob()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    return view('workExperience/journey1/addJob', compact("data"));
   }
 
   public function journey1Review()
@@ -98,9 +117,16 @@ class WorkExperienceController extends Controller
     return view('workExperience/journey2/duty', compact("data"));
   }
 
+  public function journey2AddJob()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    return view('workExperience/journey2/addJob', compact("data"));
+  }
+
   public function journey2Review()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['companies'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
     return view('workExperience/journey2/review', compact("data"));
   }
 }

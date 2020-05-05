@@ -22,12 +22,14 @@ Route::prefix('education')->group(function () {
     Route::get('period', 'questionnaires\EducationController@schoolPeriod')->name('schoolPeriod');
     Route::get('course', 'questionnaires\EducationController@schoolCourse')->name('schoolCourse');
     Route::get('qualification', 'questionnaires\EducationController@schoolQualification')->name('schoolQualification');
+    Route::get('add', 'questionnaires\EducationController@schoolAdd')->name('schoolAdd');
     Route::get('review', 'questionnaires\EducationController@schoolReview')->name('schoolReview');
   });
 });
 
 Route::prefix('workExperience')->group(function () {
   Route::get('workingNow', 'questionnaires\WorkExperienceController@workingNow')->name('workingNow');
+  Route::get('addJob', 'questionnaires\WorkExperienceController@addJob');
   Route::prefix('journey1')->group(function () {
     Route::get('company', 'questionnaires\WorkExperienceController@journey1Company');
     Route::get('country', 'questionnaires\WorkExperienceController@journey1Country');
@@ -35,6 +37,7 @@ Route::prefix('workExperience')->group(function () {
     Route::get('job', 'questionnaires\WorkExperienceController@journey1Job');
     Route::get('startJob', 'questionnaires\WorkExperienceController@journey1startJob');
     Route::get('duty', 'questionnaires\WorkExperienceController@journey1Duty');
+    Route::get('addJob', 'questionnaires\WorkExperienceController@journey1AddJob');
     Route::get('review', 'questionnaires\WorkExperienceController@journey1Review');
   });
   Route::prefix('journey2')->group(function () {
@@ -44,6 +47,7 @@ Route::prefix('workExperience')->group(function () {
     Route::get('city', 'questionnaires\WorkExperienceController@journey2City');
     Route::get('job', 'questionnaires\WorkExperienceController@journey2Job');
     Route::get('duty', 'questionnaires\WorkExperienceController@journey2Duty');
+    Route::get('addJob', 'questionnaires\WorkExperienceController@journey2AddJob');
     Route::get('review', 'questionnaires\WorkExperienceController@journey2Review');
   });
 });
@@ -67,6 +71,16 @@ Route::get('social/media', 'questionnaires\SocialController@media');
 
 Route::get('references', 'questionnaires\ReferenceController@index');
 
+Route::get('product', 'questionnaires\ProductController@index');
+
+Route::get('payment', 'questionnaires\PaymentController@index');
+
+Route::get('dashboard1', 'questionnaires\DashboardController@dashboard1');
+
+Route::get('dashboard2', 'questionnaires\DashboardController@dashboard2');
+
+
+
 Route::prefix('temp_info_save')->group(function () {
   Route::post('educationLevel', 'Form\TempFormController@educationLevel');
   Route::post('schoolName', 'Form\TempFormController@schoolName');
@@ -75,9 +89,12 @@ Route::prefix('temp_info_save')->group(function () {
   Route::post('schoolPeriod', 'Form\TempFormController@schoolPeriod');
   Route::post('schoolCourse', 'Form\TempFormController@schoolCourse');
   Route::post('schoolQualification', 'Form\TempFormController@schoolQualification');
+  Route::post('schoolAdd', 'Form\TempFormController@schoolAdd');
+  Route::post('schoolChange', 'Form\TempFormController@schoolChange');
 
   Route::prefix('workExperience')->group(function () {
     Route::post('workingNow', 'Form\TempFormController@workingNow');
+    Route::post('addJob', 'Form\TempFormController@addJob');
     Route::prefix('journey1')->group(function () {
       Route::post('company', 'Form\TempFormController@journey1Company');
       Route::post('country', 'Form\TempFormController@journey1Country');
@@ -85,6 +102,8 @@ Route::prefix('temp_info_save')->group(function () {
       Route::post('job', 'Form\TempFormController@journey1Job');
       Route::post('jobStart', 'Form\TempFormController@journey1JobStart');
       Route::post('duty', 'Form\TempFormController@journey1Duty');
+      Route::post('addJob', 'Form\TempFormController@journey1AddJob');
+      Route::post('jobChange', 'Form\TempFormController@journey1JobChange');
     });
     Route::prefix('journey2')->group(function () {
       Route::post('lastJob', 'Form\TempFormController@journey2LastJob');
@@ -93,6 +112,8 @@ Route::prefix('temp_info_save')->group(function () {
       Route::post('city', 'Form\TempFormController@journey2City');
       Route::post('job', 'Form\TempFormController@journey2Job');
       Route::post('duty', 'Form\TempFormController@journey2Duty');
+      Route::post('addJob', 'Form\TempFormController@journey2AddJob');
+      Route::post('jobChange', 'Form\TempFormController@journey2JobChange');
     });
   });
 
@@ -102,6 +123,22 @@ Route::prefix('temp_info_save')->group(function () {
   });
 
   Route::post('professional', 'Form\TempFormController@professional');
+
+  Route::prefix('personalise')->group(function () {
+    Route::post('contact', 'Form\TempFormController@personaliseContact');
+    Route::post('location', 'Form\TempFormController@personaliseLocation');
+    Route::post('website', 'Form\TempFormController@personaliseWebsite');
+  });
+
+  Route::post('social', 'Form\TempFormController@social');
+
+  Route::post('references', 'Form\TempFormController@references');
+
+  Route::post('product', 'Form\TempFormController@product');
+
+  Route::post('payment', 'Form\TempFormController@payment');
+
+  Route::post('dashboard1', 'Form\TempFormController@dashboard1');
 });
 
 Route::post('moveToNextSection', 'questionnaires\HomeController@moveToNextSection');

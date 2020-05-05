@@ -74,33 +74,32 @@
               var skillRating3 = $('#skillRating3').val();
               var skillRating4 = $('#skillRating4').val();
               var skillRating5 = $('#skillRating5').val();
-              alert(sectionId);
               if (skillName1 === '' || skillName2 === '' || skillName3 === '' || skillRating1 === '' || skillRating2 === '' || skillRating3 === '') {
                   alert('Please input 3 skills at least');
+              } else {
+                  $.ajax({
+                      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                      url: '/temp_info_save/professional',
+                      data: {
+                          'skillName1': skillName1,
+                          'skillName2': skillName2,
+                          'skillName3': skillName3,
+                          'skillName4': skillName4,
+                          'skillName5': skillName5,
+                          'skillRating1': skillRating1,
+                          'skillRating2': skillRating2,
+                          'skillRating3': skillRating3,
+                          'skillRating4': skillRating4,
+                          'skillRating5': skillRating5,
+                          'section_id': sectionId
+                      },
+                      type: 'post',
+                      async: true,
+                      success: function (result) {
+                          window.location.href = result;
+                      }
+                  });
               }
-              $.ajax({
-                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                  url: '/temp_info_save/professional',
-                  data: {
-                      'skillName1': skillName1,
-                      'skillName2': skillName2,
-                      'skillName3': skillName3,
-                      'skillName4': skillName4,
-                      'skillName5': skillName5,
-                      'skillRating1': skillRating1,
-                      'skillRating2': skillRating2,
-                      'skillRating3': skillRating3,
-                      'skillRating4': skillRating4,
-                      'skillRating5': skillRating5,
-                      'section_id': sectionId
-                  },
-                  type: 'post',
-                  async: true,
-                  success: function (result) {
-                      alert(result);
-                      window.location.href = result;
-                  }
-              });
           });
       });
   </script>

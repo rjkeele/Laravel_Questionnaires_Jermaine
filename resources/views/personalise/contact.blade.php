@@ -58,8 +58,27 @@
   <script>
       $(document).ready(function () {
           $('#btn_contact_continue').click(function () {
-              // var contact = $('#input_schoolName').val();
-              window.location.href = '/personalise/location';
+              var firstName = $('#input_firstName').val();
+              var lastName = $('#input_lastName').val();
+              var mobileNumber = $('#input_mobileNumber').val();
+              var emailAddress = $('#input_emailAddress').val();
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/personalise/contact',
+                  data: {
+                      'firstName': firstName,
+                      'lastName': lastName,
+                      'mobileNumber': mobileNumber,
+                      'emailAddress': emailAddress,
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      if (result === 'success')
+                          window.location.href = '/personalise/location';
+                  }
+              });
+
           });
       });
   </script>

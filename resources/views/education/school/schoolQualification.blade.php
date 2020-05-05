@@ -27,20 +27,24 @@
       $(document).ready(function () {
           $('#btn_schoolQualification_continue').click(function () {
               var schoolQualification = $('#input_schoolQualification').val();
-              $.ajax({
-                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                  url: '/temp_info_save/schoolQualification',
-                  data: {
-                      'schoolQualification': schoolQualification,
-                  },
-                  type: 'post',
-                  async: true,
-                  success: function (result) {
-                      if (result === 'success') {
-                          window.location.href = '/education/school/review';
+              if (schoolQualification === '') {
+                  alert('Please input the field.');
+              } else {
+                  $.ajax({
+                      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                      url: '/temp_info_save/schoolQualification',
+                      data: {
+                          'schoolQualification': schoolQualification,
+                      },
+                      type: 'post',
+                      async: true,
+                      success: function (result) {
+                          if (result === 'success') {
+                              window.location.href = '/education/school/add';
+                          }
                       }
-                  }
-              });
+                  });
+              }
           });
       });
   </script>

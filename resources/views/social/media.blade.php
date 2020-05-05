@@ -14,11 +14,6 @@
               SOCIAL MEDIA TYPE
             </label><br>
             <input type="text" name="mediaType1" id="mediaType1" class="form-control" required>
-            {{--<datalist id="skills">--}}
-              {{--@foreach($data['skills'] as $skill)--}}
-                {{--<option value="{{ $skill -> resourceSkillsName }}"></option>--}}
-              {{--@endforeach--}}
-            {{--</datalist>--}}
             <input type="text" name="mediaType2" id="mediaType2" class="form-control" required>
             <input type="text" name="mediaType3" id="mediaType3" class="form-control" required>
             <input type="text" name="mediaType4" id="mediaType4" class="form-control">
@@ -26,7 +21,7 @@
           </div>
           <div class="col-6 form-group">
             <label id="label_username_link">
-              SKILL RATING
+              USER NAME OR LINK
             </label>
             <input type="text" name="username_link1" id="username_link1" class="form-control" required>
             <input type="text" name="username_link2" id="username_link2" class="form-control" required>
@@ -60,8 +55,39 @@
   <script>
       $(document).ready(function () {
           $('#btn_social_continue').click(function () {
-              // var social = $('#input_social').val();
-              window.location.href = '/references';
+              var sectionId = '{{ Session::get('section_id') }}';
+              var mediaType1 = $('#mediaType1').val();
+              var mediaType2 = $('#mediaType2').val();
+              var mediaType3 = $('#mediaType3').val();
+              var mediaType4 = $('#mediaType4').val();
+              var mediaType5 = $('#mediaType5').val();
+              var username_link1 = $('#username_link1').val();
+              var username_link2 = $('#username_link2').val();
+              var username_link3 = $('#username_link3').val();
+              var username_link4 = $('#username_link4').val();
+              var username_link5 = $('#username_link5').val();
+              $.ajax({
+                  headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+                  url: '/temp_info_save/social',
+                  data: {
+                      'mediaType1': mediaType1,
+                      'mediaType2': mediaType2,
+                      'mediaType3': mediaType3,
+                      'mediaType4': mediaType4,
+                      'mediaType5': mediaType5,
+                      'username_link1': username_link1,
+                      'username_link2': username_link2,
+                      'username_link3': username_link3,
+                      'username_link4': username_link4,
+                      'username_link5': username_link5,
+                      'section_id': sectionId
+                  },
+                  type: 'post',
+                  async: true,
+                  success: function (result) {
+                      window.location.href = result;
+                  }
+              });
           });
       });
   </script>

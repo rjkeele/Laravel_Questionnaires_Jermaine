@@ -33,7 +33,7 @@ class HomeController extends Controller
       Session::put('section_order', 1);
       Session::put('visited', $visited);
 
-      setcookie("auth_id", $session_id, time() + 100000000, "/");
+//      setcookie("auth_id", $session_id, time() + 100000000, "/");
       $section = Section::where('sectionOrder', 1)->get();
       $startUrl = $section[0]->startUrl;
       $section_id = $section[0]->sectionId;

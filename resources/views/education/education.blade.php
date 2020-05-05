@@ -14,7 +14,7 @@
             <input type="radio" name="education" id="education-{{ $education -> resourceEducationId }}"
                    class="input_radio_button" value="{{ $education -> resourceEducationId }}">
             <div class="div_radio_button text-center">
-              <img src="{{ $education -> resourceEducationIcon }}" alt="image" height="80" style="margin-bottom: 20px">
+              <img src="{{ $education -> resourceEducationIcon }}" alt="image" height="80" style="margin-bottom: 20px; margin-top: 10px">
               <h6>{{ $education -> resourceEducationName }}</h6>
             </div>
           </label>
