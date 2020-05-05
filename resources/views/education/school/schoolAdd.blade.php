@@ -52,8 +52,13 @@
           </label>
         </div>
         <div class="col-md-8 text-left">
-          <input type="text" id="input_schoolEndDate" placeholder="{{ Session::get('schoolEndDate') }}"
-                 class="input-lg form-control-lg" value="{{ Session::get('schoolEndDate') }}">
+          @if(Session::get('schoolEndDate') == 'present present')
+            <input type="text" id="input_schoolEndDate" placeholder="present"
+                   class="input-lg form-control-lg" value="present">
+          @else
+            <input type="text" id="input_schoolEndDate" placeholder="{{ Session::get('schoolEndDate') }}"
+                   class="input-lg form-control-lg" value="{{ Session::get('schoolEndDate') }}">
+          @endif
         </div>
       </div>
       <div class="form-group row">

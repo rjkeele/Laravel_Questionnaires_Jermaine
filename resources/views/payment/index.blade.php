@@ -14,27 +14,27 @@
         <label for="input_cardNumber" id="label_input_cardNumber">
           CARD NUMBER
         </label><br>
-        <input type="number" id="input_cardNumber" name="cardNumber" class="input-lg form-control-lg">
+        <input type="number" id="input_cardNumber" name="cardNumber" class=" form-control form-control-lg">
       </div>
       <div class="row">
         <div class="col-6 form-group">
           <label for="input_cardHolderName" id="label_input_cardHolderName">
             CARDHOLDER NAME
           </label><br>
-          <input type="text" id="input_cardHolderName" name="cardHolderName" class="input-lg form-control-lg">
+          <input type="text" id="input_cardHolderName" name="cardHolderName" class=" form-control form-control-lg">
         </div>
         <div class="col-6 form-group">
           <label for="input_expiryDate" id="label_input_expiryDate">
             EXPIRY DATE
           </label><br>
-          <input type="date" id="input_expiryDate" name="expiryDate" class="input-lg form-control-lg">
+          <input type="number" id="input_expiryDate" name="expiryDate" class=" form-control form-control-lg">
         </div>
       </div>
       <div class="form-group">
         <label for="input_password" id="label_input_password">
           SET A PASSWORD
         </label><br>
-        <input type="password" id="input_password" name="password" class="input-lg form-control-lg">
+        <input type="password" id="input_password" name="password" class=" form-control form-control-lg">
       </div>
       <br><br>
       <div class="text-center" id="div_payment_continue">

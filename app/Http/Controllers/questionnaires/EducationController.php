@@ -70,6 +70,7 @@ class EducationController extends Controller
   public function schoolReview()
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['schools'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
     return view('education/school/schoolReview', compact("data"));
   }
 }

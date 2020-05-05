@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Section;
 use App\Models\CountryModel;
+use Illuminate\Support\Facades\Session;
+use App\Models\TempInfoModel;
 
 class PersonaliseController extends Controller
 {
@@ -28,5 +30,13 @@ class PersonaliseController extends Controller
   {
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
     return view('personalise/website', compact("data"));
+  }
+
+  public function review()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['countries'] = CountryModel::all();
+    $data['personalise'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
+    return view('personalise/review', compact("data"));
   }
 }

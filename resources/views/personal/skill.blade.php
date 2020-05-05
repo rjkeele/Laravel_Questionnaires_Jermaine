@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      Show Off! What Are Your Top 5 Professional Skills Relevant to Your New {{ Session::get('newJob') }} Role?
+      Show Your New Manager That You Have An Amazing Personality! What Are Your Top 5 Personal Skills?
     </div>
     <div id="content-subheader">
       Rate yourself out of 5. Give yourself a 5 if you’re an expert & 1 if you’re a Beginner
@@ -31,11 +31,14 @@
             <label id="label_skillRating">
               SKILL RATING
             </label>
-            <input type="number" name="skillRating1" id="skillRating1" class="form-control" required>
-            <input type="number" name="skillRating2" id="skillRating2" class="form-control" required>
-            <input type="number" name="skillRating3" id="skillRating3" class="form-control" required>
-            <input type="number" name="skillRating4" id="skillRating4" class="form-control">
-            <input type="number" name="skillRating5" id="skillRating5" class="form-control">
+            @for($j = 1; $j <6; $j++)
+              <select list="ratings" name="skillRating{{ $j }}" id="skillRating{{ $j }}" class="form-control"
+                      required>
+                @for($i = 1; $i < 6; $i++)
+                  <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+              </select>
+            @endfor
           </div>
           {{--<input type="hidden" id="input_hidden_education" name="hidden_education">--}}
 
@@ -45,8 +48,7 @@
             <h5>Here Are Some Good Examples</h5>
           </label>
           <div id="example-content" style="border: 1px solid gray;">
-            Active Listening <br> Adaptability <br> Communication <br> Creativity <br> Critical Thinking <br> Customer
-            Service
+            Netball Captain <br> Food Blog Writer <br> Personal Branding Expert <br> Marathon Runner <br> Chair of The PTA  <br> Secret Assassin
           </div>
         </div>
       </div>
@@ -79,7 +81,7 @@
               } else {
                   $.ajax({
                       headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                      url: '/temp_info_save/professional',
+                      url: '/temp_info_save/personal',
                       data: {
                           'skillName1': skillName1,
                           'skillName2': skillName2,

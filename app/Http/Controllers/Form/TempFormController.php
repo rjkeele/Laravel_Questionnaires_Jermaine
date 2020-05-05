@@ -373,13 +373,13 @@ class TempFormController extends Controller
     $jobSummary = $request->input('jobSummary');
 
     $update_data = array(
-      'journey2Company'.$job2Num => $companyName,
-      'journey2Country'.$job2Num => $companyCountry,
+      'journey2Company' . $job2Num => $companyName,
+      'journey2Country' . $job2Num => $companyCountry,
 //      'schoolStartDate'.$schoolNum => $schoolStartDate,
 //      'schoolEndDate'.$schoolNum => $schoolEndDate,
-      'journey2City'.$job2Num => $companyCity,
-      'journey2Job'.$job2Num => $jobTitle,
-      'journey2Duty'.$job2Num => $jobSummary,
+      'journey2City' . $job2Num => $companyCity,
+      'journey2Job' . $job2Num => $jobTitle,
+      'journey2Duty' . $job2Num => $jobSummary,
       'last_url' => '/workExperience/journey2/lastJob'
     );
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
@@ -399,13 +399,13 @@ class TempFormController extends Controller
     $job2Num = (int)Session::get('jobNum') - (int)Session::get('job1Num');
 
     $update_data = array(
-      'journey2Company'.$job2Num => $companyName,
-      'journey2Country'.$job2Num => $companyCountry,
+      'journey2Company' . $job2Num => $companyName,
+      'journey2Country' . $job2Num => $companyCountry,
 //      'schoolStartDate'.$schoolNum => $schoolStartDate,
 //      'schoolEndDate'.$schoolNum => $schoolEndDate,
-      'journey2City'.$job2Num => $companyCity,
-      'journey2Job'.$job2Num => $jobTitle,
-      'journey2Duty'.$job2Num => $jobSummary,
+      'journey2City' . $job2Num => $companyCity,
+      'journey2Job' . $job2Num => $jobTitle,
+      'journey2Duty' . $job2Num => $jobSummary,
       'last_url' => '/workExperience/journey2/review'
     );
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
@@ -465,6 +465,39 @@ class TempFormController extends Controller
       'professionalSkillRating3' => $skillRating3,
       'professionalSkillRating4' => $skillRating4,
       'professionalSkillRating5' => $skillRating5,
+      'last_url' => $nextUrl,
+      'section_id' => Session::get('section_id')
+    );
+    TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
+    return $nextUrl;
+  }
+
+  public function personal(Request $request)
+  {
+    $skillName1 = $request->input('skillName1');
+    $skillName2 = $request->input('skillName2');
+    $skillName3 = $request->input('skillName3');
+    $skillName4 = $request->input('skillName4');
+    $skillName5 = $request->input('skillName5');
+    $skillRating1 = $request->input('skillRating1');
+    $skillRating2 = $request->input('skillRating2');
+    $skillRating3 = $request->input('skillRating3');
+    $skillRating4 = $request->input('skillRating4');
+    $skillRating5 = $request->input('skillRating5');
+    $current_section_id = $request->input('section_id');
+
+    $nextUrl = $this->moveNextUrl($current_section_id);
+    $update_data = array(
+      'personalSkillName1' => $skillName1,
+      'personalSkillName2' => $skillName2,
+      'personalSkillName3' => $skillName3,
+      'personalSkillName4' => $skillName4,
+      'personalSkillName5' => $skillName5,
+      'personalSkillRating1' => $skillRating1,
+      'personalSkillRating2' => $skillRating2,
+      'personalSkillRating3' => $skillRating3,
+      'personalSkillRating4' => $skillRating4,
+      'personalSkillRating5' => $skillRating5,
       'last_url' => $nextUrl,
       'section_id' => Session::get('section_id')
     );
@@ -627,7 +660,7 @@ class TempFormController extends Controller
     } else {
       $nextUrl = '/dashboard2';
       Session::put('section_id', 12);
-      Session::put('section_order', 12);
+      Session::put('section_order', 11);
     }
 
     $update_data = array(
@@ -650,10 +683,106 @@ class TempFormController extends Controller
       'last_url' => '/dashboard2',
       'section_id' => 12
     );
-    Session::put('section_order', 12);
+    Session::put('section_order', 11);
     Session::put('section_id', 12);
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
     return 'success';
+  }
+
+  public function schoolReview(Request $request)
+  {
+    $schoolName1 = $request->input('schoolName1');
+    $schoolCountry1 = $request->input('schoolCountry1');
+    $schoolGraduate1 = $request->input('schoolGraduate1');
+    $schoolCourse1 = $request->input('schoolCourse1');
+    $schoolStartDate1 = $request->input('schoolStartDate1');
+    $schoolEndDate1 = $request->input('schoolEndDate1');
+    $schoolQualification1 = $request->input('schoolQualification1');
+    $schoolName2 = $request->input('schoolName2');
+    $schoolCountry2 = $request->input('schoolCountry2');
+    $schoolGraduate2 = $request->input('schoolGraduate2');
+    $schoolCourse2 = $request->input('schoolCourse2');
+    $schoolStartDate2 = $request->input('schoolStartDate2');
+    $schoolEndDate2 = $request->input('schoolEndDate2');
+    $schoolQualification2 = $request->input('schoolQualification2');
+    $schoolName3 = $request->input('schoolName3');
+    $schoolCountry3 = $request->input('schoolCountry3');
+    $schoolGraduate3 = $request->input('schoolGraduate3');
+    $schoolCourse3 = $request->input('schoolCourse3');
+    $schoolStartDate3 = $request->input('schoolStartDate3');
+    $schoolEndDate3 = $request->input('schoolEndDate3');
+    $schoolQualification3 = $request->input('schoolQualification3');
+    $current_section_id = $request->input('sectionId');
+
+
+    $nextUrl = $this->moveNextUrl($current_section_id);
+    $update_data = array(
+      'schoolName1' => $schoolName1,
+      'schoolCountry1' => $schoolCountry1,
+      'schoolGraduate1' => $schoolGraduate1,
+      'schoolCourse1' => $schoolCourse1,
+      'schoolQualification1' => $schoolQualification1,
+      'schoolName2' => $schoolName2,
+      'schoolCountry2' => $schoolCountry2,
+      'schoolGraduate2' => $schoolGraduate2,
+      'schoolCourse2' => $schoolCourse2,
+      'schoolQualification2' => $schoolQualification2,
+      'schoolName3' => $schoolName3,
+      'schoolCountry3' => $schoolCountry3,
+      'schoolGraduate3' => $schoolGraduate3,
+      'schoolCourse3' => $schoolCourse3,
+      'schoolQualification3' => $schoolQualification3,
+      'last_url' => $nextUrl,
+      'section_id' => Session::get('section_id')
+    );
+    TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
+    return $nextUrl;
+  }
+
+  public function profileReview(Request $request)
+  {
+    $newJob = $request->input('newJob');
+    $summary = $request->input('summary');
+    $current_section_id = $request->input('sectionId');
+
+    $nextUrl = $this->moveNextUrl($current_section_id);
+
+    $update_data = array(
+      'profileNewJob' => $newJob,
+      'profilePersonalSummary' => $summary,
+      'last_url' => $nextUrl,
+      'section_id' => Session::get('section_id')
+    );
+    TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
+    return $nextUrl;
+  }
+
+  public function personaliseReview(Request $request)
+  {
+    $firstName = $request->input('firstName');
+    $lastName = $request->input('lastName');
+    $mobileNumber = $request->input('mobileNumber');
+    $emailAddress = $request->input('emailAddress');
+    $country = $request->input('country');
+    $city = $request->input('city');
+    $addressLine = $request->input('addressLine');
+    $website = $request->input('website');
+    $current_section_id = $request->input('section_id');
+    $nextUrl = $this->moveNextUrl($current_section_id);
+    $update_data = array(
+      'personaliseFirstName' => $firstName,
+      'personaliseLastName' => $lastName,
+      'personaliseMobileNumber' => $mobileNumber,
+      'personaliseEmailAddress' => $emailAddress,
+      'personaliseCountry' => $country,
+      'personaliseCity' => $city,
+      'personaliseAddressLine' => $addressLine,
+      'personaliseWebsite' => $website,
+      'last_url' => $nextUrl,
+      'section_id' => Session::get('section_id')
+    );
+    TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
+    return $nextUrl;
   }
 
   public function moveNextUrl($current_section_id)

@@ -54,7 +54,6 @@ class HomeController extends Controller
       Session::put('section_order', $section_order);
       return redirect($last_url);
     }
-
   }
 
   public function moveToNextSection(Request $request)
@@ -77,7 +76,7 @@ class HomeController extends Controller
     Session::put('section_id', $section_id);
     $section = Section::where('sectionId', $section_id)->get();
 //    $section_order = $section[0]->sectionOrder;
-    $nextUrl = $section[0]->startUrl;
+    $nextUrl = $section[0]->lastUrl;
     return $nextUrl;
   }
 }

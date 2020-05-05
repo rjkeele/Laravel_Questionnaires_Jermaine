@@ -145,6 +145,9 @@ body {
   right: 10px;
   cursor: pointer!important;
 }
+.row {
+  margin-left: 0px!important;
+}
 
 @media (max-width: 1300px) {
   #sidebar {
@@ -182,4 +185,21 @@ body {
 .progress {
   position: relative;
   bottom: 15px;
+}
+.div_form_group {
+  width: 100% !important;
+}
+.div_form_group .col-md-3 {
+  padding: 0px 0px;
+  width: 25%;
+}
+.fa .far .fas{
+  font-family: "Font Awesome 5 Brands"!important;
+}
+.btn_download {
+  pointer-events: none;
+  opacity: 0.6;
+}
+#div_hidden_btns {
+  cursor: not-allowed;
 }

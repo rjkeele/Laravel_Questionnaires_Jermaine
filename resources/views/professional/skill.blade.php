@@ -31,11 +31,15 @@
             <label id="label_skillRating">
               SKILL RATING
             </label>
-            <input type="number" name="skillRating1" id="skillRating1" class="form-control" required>
-            <input type="number" name="skillRating2" id="skillRating2" class="form-control" required>
-            <input type="number" name="skillRating3" id="skillRating3" class="form-control" required>
-            <input type="number" name="skillRating4" id="skillRating4" class="form-control">
-            <input type="number" name="skillRating5" id="skillRating5" class="form-control">
+            @for($j = 1; $j <6; $j++)
+              <select list="ratings" name="skillRating{{ $j }}" id="skillRating{{ $j }}" class="form-control"
+                      required>
+                @for($i = 1; $i < 6; $i++)
+                  <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+              </select>
+            @endfor
+
           </div>
           {{--<input type="hidden" id="input_hidden_education" name="hidden_education">--}}
 
@@ -74,33 +78,34 @@
               var skillRating3 = $('#skillRating3').val();
               var skillRating4 = $('#skillRating4').val();
               var skillRating5 = $('#skillRating5').val();
-              if (skillName1 === '' || skillName2 === '' || skillName3 === '' || skillRating1 === '' || skillRating2 === '' || skillRating3 === '') {
-                  alert('Please input 3 skills at least');
-              } else {
-                  $.ajax({
-                      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
-                      url: '/temp_info_save/professional',
-                      data: {
-                          'skillName1': skillName1,
-                          'skillName2': skillName2,
-                          'skillName3': skillName3,
-                          'skillName4': skillName4,
-                          'skillName5': skillName5,
-                          'skillRating1': skillRating1,
-                          'skillRating2': skillRating2,
-                          'skillRating3': skillRating3,
-                          'skillRating4': skillRating4,
-                          'skillRating5': skillRating5,
-                          'section_id': sectionId
-                      },
-                      type: 'post',
-                      async: true,
-                      success: function (result) {
-                          // alert(result);
-                          window.location.href = result;
-                      }
-                  });
-              }
+
+            if (skillName1 === '' || skillName2 === '' || skillName3 === '' || skillRating1 === '' || skillRating2 === '' || skillRating3 === '') {
+            alert('Please input 3 skills at least');
+            } else {
+            $.ajax({
+            headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
+            url: '/temp_info_save/professional',
+            data: {
+            'skillName1': skillName1,
+            'skillName2': skillName2,
+            'skillName3': skillName3,
+            'skillName4': skillName4,
+            'skillName5': skillName5,
+            'skillRating1': skillRating1,
+            'skillRating2': skillRating2,
+            'skillRating3': skillRating3,
+            'skillRating4': skillRating4,
+            'skillRating5': skillRating5,
+            'section_id': sectionId
+            },
+            type: 'post',
+            async: true,
+            success: function (result) {
+            // alert(result);
+            window.location.href = result;
+            }
+            });
+            }
           });
       });
   </script>

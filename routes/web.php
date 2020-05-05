@@ -55,21 +55,27 @@ Route::prefix('workExperience')->group(function () {
 Route::prefix('profile')->group(function () {
   Route::get('newJob', 'questionnaires\ProfileController@newJob');
   Route::get('personal', 'questionnaires\ProfileController@personal');
+  Route::get('review', 'questionnaires\ProfileController@review');
 });
 
 Route::get('professional', 'questionnaires\ProfessionalController@skill');
+Route::get('professional/review', 'questionnaires\ProfessionalController@review');
 
 Route::get('personal', 'questionnaires\PersonalController@skill');
+Route::get('personal/review', 'questionnaires\PersonalController@review');
 
 Route::prefix('personalise')->group(function () {
   Route::get('contact', 'questionnaires\PersonaliseController@contact');
   Route::get('location', 'questionnaires\PersonaliseController@location');
   Route::get('website', 'questionnaires\PersonaliseController@website');
+  Route::get('review', 'questionnaires\PersonaliseController@review');
 });
 
 Route::get('social/media', 'questionnaires\SocialController@media');
+Route::get('social/review', 'questionnaires\SocialController@review');
 
 Route::get('references', 'questionnaires\ReferenceController@index');
+Route::get('references/review', 'questionnaires\ReferenceController@review');
 
 Route::get('product', 'questionnaires\ProductController@index');
 
@@ -91,6 +97,7 @@ Route::prefix('temp_info_save')->group(function () {
   Route::post('schoolQualification', 'Form\TempFormController@schoolQualification');
   Route::post('schoolAdd', 'Form\TempFormController@schoolAdd');
   Route::post('schoolChange', 'Form\TempFormController@schoolChange');
+  Route::post('schoolReview', 'Form\TempFormController@schoolReview');
 
   Route::prefix('workExperience')->group(function () {
     Route::post('workingNow', 'Form\TempFormController@workingNow');
@@ -120,14 +127,18 @@ Route::prefix('temp_info_save')->group(function () {
   Route::prefix('profile')->group(function () {
     Route::post('newJob', 'Form\TempFormController@profileNewJob');
     Route::post('personalSummary', 'Form\TempFormController@profilePersonalSummary');
+    Route::post('review', 'Form\TempFormController@profileReview');
   });
 
   Route::post('professional', 'Form\TempFormController@professional');
+
+  Route::post('personal', 'Form\TempFormController@personal');
 
   Route::prefix('personalise')->group(function () {
     Route::post('contact', 'Form\TempFormController@personaliseContact');
     Route::post('location', 'Form\TempFormController@personaliseLocation');
     Route::post('website', 'Form\TempFormController@personaliseWebsite');
+    Route::post('review', 'Form\TempFormController@personaliseReview');
   });
 
   Route::post('social', 'Form\TempFormController@social');
@@ -143,3 +154,4 @@ Route::prefix('temp_info_save')->group(function () {
 
 Route::post('moveToNextSection', 'questionnaires\HomeController@moveToNextSection');
 Route::post('moveToAnotherSection', 'questionnaires\HomeController@moveToAnotherSection');
+

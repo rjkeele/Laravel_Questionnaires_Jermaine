@@ -13,19 +13,21 @@
             <label id="label_input_mediaType">
               SOCIAL MEDIA TYPE
             </label><br>
-            <input type="text" name="mediaType1" id="mediaType1" class="form-control" required>
-            <input type="text" name="mediaType2" id="mediaType2" class="form-control" required>
-            <input type="text" name="mediaType3" id="mediaType3" class="form-control" required>
-            <input type="text" name="mediaType4" id="mediaType4" class="form-control">
-            <input type="text" name="mediaType5" id="mediaType5" class="form-control">
+            @for($i = 1; $i < 6; $i++)
+              <select type="text" name="mediaType{{ $i }}" id="mediaType{{ $i }}" class="form-control">
+                @foreach($data['socials'] as $social)
+                  <option value="{{ $social->socialName }}" style="background-image: url('{{ $social->iconPath }}')">{{ $social->socialName }}</option>
+                @endforeach
+              </select>
+            @endfor
           </div>
           <div class="col-6 form-group">
             <label id="label_username_link">
               USER NAME OR LINK
             </label>
-            <input type="text" name="username_link1" id="username_link1" class="form-control" required>
-            <input type="text" name="username_link2" id="username_link2" class="form-control" required>
-            <input type="text" name="username_link3" id="username_link3" class="form-control" required>
+            <input type="text" name="username_link1" id="username_link1" class="form-control">
+            <input type="text" name="username_link2" id="username_link2" class="form-control">
+            <input type="text" name="username_link3" id="username_link3" class="form-control">
             <input type="text" name="username_link4" id="username_link4" class="form-control">
             <input type="text" name="username_link5" id="username_link5" class="form-control">
           </div>
@@ -45,7 +47,8 @@
 
       <br><br>
       <div class="text-center" id="div_social_continue">
-        <button id="btn_social_continue" class="btn btn-lg btn-success" type="button"> CONTINUE</button>
+        <button id="btn_social_skip" class="btn btn-lg btn-info btn_media" type="button"> SKIP </button>
+        <button id="btn_social_continue" class="btn btn-lg btn-success btn_media" type="button"> CONTINUE</button>
       </div>
     </div>
   </div>
@@ -54,7 +57,7 @@
 @section('js')
   <script>
       $(document).ready(function () {
-          $('#btn_social_continue').click(function () {
+          $('.btn_media').click(function () {
               var sectionId = '{{ Session::get('section_id') }}';
               var mediaType1 = $('#mediaType1').val();
               var mediaType2 = $('#mediaType2').val();

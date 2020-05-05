@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      What's The Name of The Course You Studied a {{Session::get('schoolName')}}?
+      What's The Name of The Course You Studied At {{Session::get('schoolName')}}?
     </div>
     <br><br><br>
     <div id="content-body" class="text-center">
