@@ -377,6 +377,16 @@
 @section('js')
   <script>
       $(document).ready(function () {
+          var sectionId = '{{ Session::get('section_id') }}';
+          var sectionOrder = '{{ Session::get('section_order') }}';
+
+          var currentSectionOrder = $('#sidelist_' + sectionId).attr('data-order');
+
+          if (parseInt(currentSectionOrder) >= parseInt(sectionOrder)) {
+              $('.progress-bar').css('width', '{{ round(((int)Session::get('section_order'))*100/10) }}%');
+              $('#span_progress').html('{{ round(((int)Session::get('section_order'))*100/10) }}%');
+          }
+
           $('#btn_schoolReview_continue').click(function () {
               var sectionId = '{{ Session::get('section_id') }}';
               var schoolName1 = $('#schoolName1').val();

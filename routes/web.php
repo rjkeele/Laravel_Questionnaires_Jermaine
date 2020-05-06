@@ -30,6 +30,7 @@ Route::prefix('education')->group(function () {
 Route::prefix('workExperience')->group(function () {
   Route::get('workingNow', 'questionnaires\WorkExperienceController@workingNow')->name('workingNow');
   Route::get('addJob', 'questionnaires\WorkExperienceController@addJob');
+  Route::get('review', 'questionnaires\WorkExperienceController@review');
   Route::prefix('journey1')->group(function () {
     Route::get('company', 'questionnaires\WorkExperienceController@journey1Company');
     Route::get('country', 'questionnaires\WorkExperienceController@journey1Country');
@@ -102,6 +103,7 @@ Route::prefix('temp_info_save')->group(function () {
   Route::prefix('workExperience')->group(function () {
     Route::post('workingNow', 'Form\TempFormController@workingNow');
     Route::post('addJob', 'Form\TempFormController@addJob');
+    Route::post('review', 'Form\TempFormController@workExperienceReview');
     Route::prefix('journey1')->group(function () {
       Route::post('company', 'Form\TempFormController@journey1Company');
       Route::post('country', 'Form\TempFormController@journey1Country');

@@ -58,24 +58,46 @@
       </div>
       <div class="form-group row">
         <div class="col-md-3 text-right">
-          <label for="input_jobStartDate" id="label_input_jobStartDate">
-            Job Start Date
+          <label for="input_jobStartMonth" id="label_input_jobStartMonth">
+            Job Start Month
           </label>
         </div>
         <div class="col-md-8 text-left">
-          <input type="text" id="input_jobStartDate" placeholder="{{ Session::get('journey1StartDate') }}"
-                 class="input-lg form-control-lg" value="{{ Session::get('journey1StartDate') }}">
+          <input type="text" id="input_jobStartMonth" placeholder="{{ Session::get('journey1StartMonth') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('journey1StartMonth') }}">
         </div>
       </div>
       <div class="form-group row">
         <div class="col-md-3 text-right">
-          <label for="input_jobEndDate" id="label_input_jobEndDate">
-            End Date
+          <label for="input_jobStartYear" id="label_input_jobStartYear">
+            Job Start Year
           </label>
         </div>
         <div class="col-md-8 text-left">
-          <input type="text" id="input_jobEndDate" placeholder="{{ Session::get('journey1EndDate') }}"
-                 class="input-lg form-control-lg" value="{{ Session::get('journey1EndDate') }}">
+          <input type="text" id="input_jobStartYear" placeholder="{{ Session::get('journey1StartYear') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('journey1StartYear') }}">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3 text-right">
+          <label for="input_jobEndMonth" id="label_input_jobEndMonth">
+            Job End Month
+          </label>
+        </div>
+        <div class="col-md-8 text-left">
+          <input type="text" id="input_jobEndMonth" placeholder="{{ Session::get('journey1EndMonth') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('journey1EndMonth') }}">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3 text-right">
+          <label for="input_jobEndYear" id="label_input_jobEndYear">
+            Job End Year
+          </label>
+        </div>
+        <div class="col-md-8 text-left">
+          <input type="text" id="input_jobEndYear" placeholder="{{ Session::get('journey1EndYear') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('journey1EndYear') }}">
         </div>
       </div>
       <div class="form-group row">
@@ -112,8 +134,8 @@
               var companyCountry = $('#input_companyCountry').val();
               var companyCity = $('#input_companyCity').val();
               var jobTitle = $('#input_companyJob').val();
-              var jobStartDate = $('#input_jobStartDate').val();
-              var jobEndDate = $('#input_jobEndDate').val();
+              var jobStartMonth = $('#input_jobStartMonth').val();
+              var jobEndMonth = $('#input_jobEndMonth').val();
               var jobSummary = $('#input_jobSummary').val();
               $.ajax({
                   headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
@@ -124,8 +146,8 @@
                       'companyName': companyName,
                       'companyCountry': companyCountry,
                       'companyCity': companyCity,
-                      'jobStartDate': jobStartDate,
-                      'jobEndDate': jobEndDate,
+                      'jobStartMonth': jobStartMonth,
+                      'jobEndMonth': jobEndMonth,
                       'jobTitle': jobTitle,
                       'jobSummary': jobSummary,
                   },
@@ -140,7 +162,7 @@
           });
 
           $('#btn_addJob_skip').click(function () {
-              window.location.href = '/workExperience/journey1/review';
+              window.location.href = '/workExperience/review';
           });
 
           $('#btn_addSchool_continue').click(function () {
@@ -148,8 +170,8 @@
               var companyCountry = $('#input_companyCountry').val();
               var companyCity = $('#input_companyCity').val();
               var jobTitle = $('#input_companyJob').val();
-              var jobStartDate = $('#input_jobStartDate').val();
-              var jobEndDate = $('#input_jobEndDate').val();
+              var jobStartMonth = $('#input_jobStartMonth').val();
+              var jobEndMonth = $('#input_jobEndMonth').val();
               var jobSummary = $('#input_jobSummary').val();
 
               $.ajax({
@@ -159,8 +181,8 @@
                       'companyName': companyName,
                       'companyCountry': companyCountry,
                       'companyCity': companyCity,
-                      'jobStartDate': jobStartDate,
-                      'jobEndDate': jobEndDate,
+                      'jobStartMonth': jobStartMonth,
+                      'jobEndMonth': jobEndMonth,
                       'jobTitle': jobTitle,
                       'jobSummary': jobSummary,
                   },

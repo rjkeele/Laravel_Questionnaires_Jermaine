@@ -70,8 +70,10 @@ class TempFormController extends Controller
       'last_url' => '/education/school/course'
     );
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
-    Session::put('schoolStartDate', $startYear . ' ' . $startMonth);
-    Session::put('schoolEndDate', $endYear . ' ' . $endMonth);
+    Session::put('schoolStartMonth', $startMonth);
+    Session::put('schoolStartYear', $startYear);
+    Session::put('schoolEndMonth', $endMonth);
+    Session::put('schoolEndYear', $endYear);
     return 'success';
   }
 
@@ -96,16 +98,20 @@ class TempFormController extends Controller
     $schoolNum = $request->input('schoolNum');
     $schoolName = $request->input('schoolName');
     $schoolCountry = $request->input('schoolCountry');
-    $schoolStartDate = $request->input('schoolStartDate');
-    $schoolEndDate = $request->input('schoolEndDate');
+    $schoolStartYear = $request->input('schoolStartYear');
+    $schoolEndYear = $request->input('schoolEndYear');
+    $schoolStartMonth = $request->input('schoolStartMonth');
+    $schoolEndMonth = $request->input('schoolEndMonth');
     $schoolCourse = $request->input('schoolCourse');
     $schoolQualification = $request->input('schoolQualification');
     Session::put('schoolNum', (int)$schoolNum + 1);
     $update_data = array(
       'schoolName' . $schoolNum => $schoolName,
       'schoolCountry' . $schoolNum => $schoolCountry,
-//      'schoolStartDate'.$schoolNum => $schoolStartDate,
-//      'schoolEndDate'.$schoolNum => $schoolEndDate,
+      'schoolStartYear' . $schoolNum => $schoolStartYear,
+      'schoolEndYear' . $schoolNum => $schoolEndYear,
+      'schoolStartMonth' . $schoolNum => $schoolStartMonth,
+      'schoolEndMonth' . $schoolNum => $schoolEndMonth,
       'schoolCourse' . $schoolNum => $schoolCourse,
       'schoolQualification' . $schoolNum => $schoolQualification,
       'last_url' => '/education/school/name'
@@ -118,8 +124,10 @@ class TempFormController extends Controller
   {
     $schoolName = $request->input('schoolName');
     $schoolCountry = $request->input('schoolCountry');
-    $schoolStartDate = $request->input('schoolStartDate');
-    $schoolEndDate = $request->input('schoolEndDate');
+    $schoolStartYear = $request->input('schoolStartYear');
+    $schoolEndYear = $request->input('schoolEndYear');
+    $schoolStartMonth = $request->input('schoolStartMonth');
+    $schoolEndMonth = $request->input('schoolEndMonth');
     $schoolCourse = $request->input('schoolCourse');
     $schoolQualification = $request->input('schoolQualification');
     $schoolNum = Session::get('schoolNum');
@@ -127,6 +135,10 @@ class TempFormController extends Controller
     $update_data = array(
       'schoolName' . $schoolNum => $schoolName,
       'schoolCountry' . $schoolNum => $schoolCountry,
+      'schoolStartYear' . $schoolNum => $schoolStartYear,
+      'schoolEndYear' . $schoolNum => $schoolEndYear,
+      'schoolStartMonth' . $schoolNum => $schoolStartMonth,
+      'schoolEndMonth' . $schoolNum => $schoolEndMonth,
       'schoolCourse' . $schoolNum => $schoolCourse,
       'schoolQualification' . $schoolNum => $schoolQualification,
       'last_url' => '/education/school/review'
@@ -200,12 +212,15 @@ class TempFormController extends Controller
     $jobStartMonth = $request->input('jobStartMonth');
     $jobStartYear = $request->input('jobStartYear');
     $update_data = array(
-      'journey1StartJob' => $jobStartMonth . ' ' . $jobStartYear,
+      'journey1StartMonth' => $jobStartMonth,
+      'journey1StartYear' => $jobStartYear,
       'last_url' => '/workExperience/journey1/duty'
     );
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
-    Session::put('journey1StartDate', $jobStartMonth . '-' . $jobStartYear);
-    Session::put('journey1EndDate', 'present');
+    Session::put('journey1StartMonth', $jobStartMonth);
+    Session::put('journey1StartYear', $jobStartYear);
+    Session::put('journey1EndMonth', 'present');
+    Session::put('journey1EndYear', 'present');
     return 'success';
   }
 
@@ -289,8 +304,10 @@ class TempFormController extends Controller
       'last_url' => '/workExperience/journey2/company'
     );
     TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
-    Session::put('journey2StartDate', $startMonth . '-' . $startYear);
-    Session::put('journey2EndDate', $endMonth . '-' . $endYear);
+    Session::put('journey2StartMonth', $startMonth);
+    Session::put('journey2StartYear', $startYear);
+    Session::put('journey2EndMonth', $endMonth);
+    Session::put('journey2EndYear', $endYear);
     return 'success';
   }
 
@@ -695,22 +712,28 @@ class TempFormController extends Controller
     $schoolCountry1 = $request->input('schoolCountry1');
     $schoolGraduate1 = $request->input('schoolGraduate1');
     $schoolCourse1 = $request->input('schoolCourse1');
-    $schoolStartDate1 = $request->input('schoolStartDate1');
-    $schoolEndDate1 = $request->input('schoolEndDate1');
+    $schoolStartMonth1 = $request->input('schoolStartMonth1');
+    $schoolEndMonth1 = $request->input('schoolEndMonth1');
+    $schoolStartYear1 = $request->input('schoolStartYear1');
+    $schoolEndYear1 = $request->input('schoolEndYear1');
     $schoolQualification1 = $request->input('schoolQualification1');
     $schoolName2 = $request->input('schoolName2');
     $schoolCountry2 = $request->input('schoolCountry2');
     $schoolGraduate2 = $request->input('schoolGraduate2');
     $schoolCourse2 = $request->input('schoolCourse2');
-    $schoolStartDate2 = $request->input('schoolStartDate2');
-    $schoolEndDate2 = $request->input('schoolEndDate2');
+    $schoolStartMonth2 = $request->input('schoolStartMonth2');
+    $schoolEndMonth2 = $request->input('schoolEndMonth2');
+    $schoolStartYear2 = $request->input('schoolStartYear2');
+    $schoolEndYear2 = $request->input('schoolEndYear2');
     $schoolQualification2 = $request->input('schoolQualification2');
     $schoolName3 = $request->input('schoolName3');
     $schoolCountry3 = $request->input('schoolCountry3');
     $schoolGraduate3 = $request->input('schoolGraduate3');
     $schoolCourse3 = $request->input('schoolCourse3');
-    $schoolStartDate3 = $request->input('schoolStartDate3');
-    $schoolEndDate3 = $request->input('schoolEndDate3');
+    $schoolStartMonth3 = $request->input('schoolStartMonth3');
+    $schoolEndMonth3 = $request->input('schoolEndMonth3');
+    $schoolStartYear3 = $request->input('schoolStartYear3');
+    $schoolEndYear3 = $request->input('schoolEndYear3');
     $schoolQualification3 = $request->input('schoolQualification3');
     $current_section_id = $request->input('sectionId');
 
@@ -732,6 +755,102 @@ class TempFormController extends Controller
       'schoolGraduate3' => $schoolGraduate3,
       'schoolCourse3' => $schoolCourse3,
       'schoolQualification3' => $schoolQualification3,
+      'schoolStartYear1' => $schoolStartYear1,
+      'schoolEndYear1' => $schoolEndYear1,
+      'schoolStartMonth1' => $schoolStartMonth1,
+      'schoolEndMonth1' => $schoolEndMonth1,
+      'schoolStartYear2' => $schoolStartYear2,
+      'schoolEndYear2' => $schoolEndYear2,
+      'schoolStartMonth2' => $schoolStartMonth2,
+      'schoolEndMonth2' => $schoolEndMonth2,
+      'schoolStartYear3' => $schoolStartYear3,
+      'schoolEndYear3' => $schoolEndYear3,
+      'schoolStartMonth3' => $schoolStartMonth3,
+      'schoolEndMonth3' => $schoolEndMonth3,
+      'last_url' => $nextUrl,
+      'section_id' => Session::get('section_id')
+    );
+    TempInfoModel::where('auth_id', Session::get('auth_id'))->update($update_data);
+    return $nextUrl;
+  }
+
+  public function workExperienceReview(Request $request)
+  {
+    $journey1Company = $request->input('journey1Company');
+    $journey1Country = $request->input('journey1Country');
+    $journey1City = $request->input('journey1City');
+    $journey1Job = $request->input('journey1Job');
+    $journey1StartMonth = $request->input('journey1StartMonth');
+    $journey1StartYear = $request->input('journey1StartYear');
+//    $journey1EndMonth = $request->input('journey1EndMonth');
+//    $journey1EndYear = $request->input('journey1EndYear');
+    $journey1Duty = $request->input('journey1Duty');
+    $journey2Company1 = $request->input('journey2Company1');
+    $journey2Country1 = $request->input('journey2Country1');
+    $journey2City1 = $request->input('journey2City1');
+    $journey2Job1 = $request->input('journey2Job1');
+    $lastJobStartMonth1 = $request->input('lastJobStartMonth1');
+    $lastJobStartYear1 = $request->input('lastJobStartYear1');
+    $lastJobEndMonth1 = $request->input('lastJobEndMonth1');
+    $lastJobEndYear1 = $request->input('lastJobEndYear1');
+    $journey2Duty1 = $request->input('journey2Duty1');
+    $journey2Company2 = $request->input('journey2Company2');
+    $journey2Country2 = $request->input('journey2Country2');
+    $journey2City2 = $request->input('journey2City2');
+    $journey2Job2 = $request->input('journey2Job2');
+    $lastJobStartMonth2 = $request->input('lastJobStartMonth2');
+    $lastJobStartYear2 = $request->input('lastJobStartYear2');
+    $lastJobEndMonth2 = $request->input('lastJobEndMonth2');
+    $lastJobEndYear2 = $request->input('lastJobEndYear2');
+    $journey2Duty2 = $request->input('journey2Duty2');
+    $journey2Company3 = $request->input('journey2Company3');
+    $journey2Country3 = $request->input('journey2Country3');
+    $journey2City3 = $request->input('journey2City3');
+    $journey2Job3 = $request->input('journey2Job3');
+    $lastJobStartMonth3 = $request->input('lastJobStartMonth3');
+    $lastJobStartYear3 = $request->input('lastJobStartYear3');
+    $lastJobEndMonth3 = $request->input('lastJobEndMonth3');
+    $lastJobEndYear3 = $request->input('lastJobEndYear3');
+    $journey2Duty3 = $request->input('journey2Duty3');
+
+    $current_section_id = $request->input('sectionId');
+    $nextUrl = $this->moveNextUrl($current_section_id);
+
+    $update_data = array(
+      'journey1Company' => $journey1Company,
+      'journey1Country' => $journey1Country,
+      'journey1City' => $journey1City,
+      'journey1Job' => $journey1Job,
+      'journey1StartMonth' => $journey1StartMonth,
+      'journey1StartYear' => $journey1StartYear,
+      'journey1Duty' => $journey1Duty,
+      'journey2Company1' => $journey2Company1,
+      'journey2Country1' => $journey2Country1,
+      'journey2City1' => $journey2City1,
+      'journey2Job1' => $journey2Job1,
+      'lastJobStartMonth1' => $lastJobStartMonth1,
+      'lastJobStartYear1' => $lastJobStartYear1,
+      'lastJobEndMonth1' => $lastJobEndMonth1,
+      'lastJobEndYear1' => $lastJobEndYear1,
+      'journey2Duty1' => $journey2Duty1,
+      'journey2Company2' => $journey2Company2,
+      'journey2Country2' => $journey2Country2,
+      'journey2City2' => $journey2City2,
+      'journey2Job2' => $journey2Job2,
+      'lastJobStartMonth2' => $lastJobStartMonth2,
+      'lastJobStartYear2' => $lastJobStartYear2,
+      'lastJobEndMonth2' => $lastJobEndMonth2,
+      'lastJobEndYear2' => $lastJobEndYear2,
+      'journey2Duty2' => $journey2Duty2,
+      'journey2Company3' => $journey2Company3,
+      'journey2Country3' => $journey2Country3,
+      'journey2City3' => $journey2City3,
+      'journey2Job3' => $journey2Job3,
+      'lastJobStartMonth3' => $lastJobStartMonth3,
+      'lastJobStartYear3' => $lastJobStartYear3,
+      'lastJobEndMonth3' => $lastJobEndMonth3,
+      'lastJobEndYear3' => $lastJobEndYear3,
+      'journey2Duty3' => $journey2Duty3,
       'last_url' => $nextUrl,
       'section_id' => Session::get('section_id')
     );

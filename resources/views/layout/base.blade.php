@@ -29,7 +29,7 @@
               @if($section -> sectionOrder < 9)
                 @if($section -> sectionOrder >= Session::get('section_order'))
                   <div class="cursorDisabled">
-                    <li id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}"
+                    <li id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" data-order="{{ $section->sectionOrder }}"
                         class="sidelist isDisabled"><a
                           href="{{ $section -> startUrl }}"><img width="20" height="20"
                                                                  src="{{ $section -> sectionIconPath }}">{{ $section -> sectionName }}
@@ -37,13 +37,13 @@
                   </div>
 
                 @else
-                  <li id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" class="sidelist"><a
+                  <li id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" data-order="{{ $section->sectionOrder }}" class="sidelist"><a
                         href="{{ $section -> startUrl }}"><img width="20" height="20"
                                                                src="{{ $section -> sectionIconPath }}">{{ $section -> sectionName }}
                     </a></li>
                 @endif
               @else
-                <li style="display: none" id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" class="sidelist">
+                <li style="display: none" id="sidelist_{{ $section->sectionId }}" data-id="{{ $section->sectionId }}" data-order="{{ $section->sectionOrder }}" class="sidelist">
                   <a href="{{ $section -> startUrl }}"><img width="20" height="20"
                                                              src="{{ $section -> sectionIconPath }}">{{ $section -> sectionName }}
                   </a>
@@ -58,12 +58,13 @@
           <button class="btn btn-primary" id="menu-toggle">Menu</button>
           <br><br>
         </div>
-        <div class="progress" style="width:80%; margin-left: 10% ">
+        <div class="progress" style="width:80%; margin-left: 10%;float: left">
           <div class="progress-bar progress-bar-striped progress-bar-animated"
-               style="width: {{ round((int)Session::get('section_order')*100/11) }}%">
-            {{ round((int)Session::get('section_order')*100/11) }}%
+               style="width: {{ round(((int)Session::get('section_order')-1)*100/10) }}%">
+            {{--{{ round(((int)Session::get('section_order')-1)*100/11) }}%--}}
           </div>
         </div>
+        <span id="span_progress" style="float: left;position: relative;top: -20px;">{{ round(((int)Session::get('section_order')-1)*100/10) }}%</span>
       </div>
       <div id="main-content">
         {{--<form method="post" id="main-form">--}}
@@ -82,8 +83,14 @@
     $(document).ready(function () {
         var sectionId = '{{ Session::get('section_id') }}';
         var sectionOrder = '{{ Session::get('section_order') }}';
+        var schoolNum = '{{ Session::get('schoolNum') }}';
+        var jobNum = '{{ Session::get('jobNum') }}';
+        var job1Num = '{{ Session::get('job1Num') }}';
         console.log(sectionId);
         console.log(sectionOrder);
+        console.log('schoolNum', schoolNum);
+        console.log('jobNum', jobNum);
+        console.log('job1Num', job1Num);
         if (sectionId == 9){
           $('#sidelist_9').show();
         }

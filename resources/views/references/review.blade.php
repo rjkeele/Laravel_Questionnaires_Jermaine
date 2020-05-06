@@ -3,7 +3,7 @@
 @section('content')
   <div class="container text-center">
     <div id="content-header">
-      Employers Love To Know That You Have Excellent Reference Available
+      Your References
     </div>
     <br>
     <div id="content-body" class="text-left">

@@ -63,7 +63,7 @@ class EducationController extends Controller
 
   public function schoolAdd(){
     $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
-//    $data['schools'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
+    $data['schools'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
     return view('education/school/schoolAdd', compact("data"));
   }
 

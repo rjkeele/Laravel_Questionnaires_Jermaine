@@ -36,28 +36,55 @@
       </div>
       <div class="form-group row">
         <div class="col-md-3 text-right">
-          <label for="input_schoolStartDate" id="label_input_schoolStartDate">
-            Start Date
+          <label for="input_schoolStartMonth" id="label_input_schoolStartMonth">
+            Start Month
           </label>
         </div>
         <div class="col-md-8 text-left">
-          <input type="text" id="input_schoolStartDate" placeholder="{{ Session::get('schoolStartDate') }}"
-                 class="input-lg form-control-lg" value="{{ Session::get('schoolStartDate') }}">
+          <input type="text" id="input_schoolStartMonth" placeholder="{{ Session::get('schoolStartMonth') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('schoolStartMonth') }}">
         </div>
       </div>
       <div class="form-group row">
         <div class="col-md-3 text-right">
-          <label for="input_schoolEndDate" id="label_input_schoolEndDate">
-            End Date
+          <label for="input_schoolStartYear" id="label_input_schoolStartYear">
+            Start Year
           </label>
         </div>
         <div class="col-md-8 text-left">
-          @if(Session::get('schoolEndDate') == 'present present')
-            <input type="text" id="input_schoolEndDate" placeholder="present"
+          <input type="text" id="input_schoolStartYear" placeholder="{{ Session::get('schoolStartYear') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('schoolStartYear') }}">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3 text-right">
+          <label for="input_schoolEndMonth" id="label_input_schoolEndMonth">
+            End Month
+          </label>
+        </div>
+        <div class="col-md-8 text-left">
+          {{--@if(Session::get('schoolEndMonth') == 'present')--}}
+          {{--<input type="text" id="input_schoolEndMonth" placeholder="present"--}}
+          {{--class="input-lg form-control-lg" value="present">--}}
+          {{--@else--}}
+          <input type="text" id="input_schoolEndMonth" placeholder="{{ Session::get('schoolEndMonth') }}"
+                 class="input-lg form-control-lg" value="{{ Session::get('schoolEndMonth') }}">
+          {{--@endif--}}
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-3 text-right">
+          <label for="input_schoolEndYear" id="label_input_schoolEndYear">
+            End Year
+          </label>
+        </div>
+        <div class="col-md-8 text-left">
+          @if(Session::get('schoolEndYear') == 'present present')
+            <input type="text" id="input_schoolEndYear" placeholder="present"
                    class="input-lg form-control-lg" value="present">
           @else
-            <input type="text" id="input_schoolEndDate" placeholder="{{ Session::get('schoolEndDate') }}"
-                   class="input-lg form-control-lg" value="{{ Session::get('schoolEndDate') }}">
+            <input type="text" id="input_schoolEndYear" placeholder="{{ Session::get('schoolEndYear') }}"
+                   class="input-lg form-control-lg" value="{{ Session::get('schoolEndYear') }}">
           @endif
         </div>
       </div>
@@ -103,8 +130,10 @@
           $('#btn_addSchool').click(function () {
               var schoolName = $('#input_schoolName').val();
               var schoolCountry = $('#input_schoolCountry').val();
-              var schoolStartDate = $('#input_schoolStartDate').val();
-              var schoolEndDate = $('#input_schoolEndDate').val();
+              var schoolStartYear = $('#input_schoolStartYear').val();
+              var schoolEndYear = $('#input_schoolEndYear').val();
+              var schoolStartMonth = $('#input_schoolStartMonth').val();
+              var schoolEndMonth = $('#input_schoolEndMonth').val();
               var schoolCourse = $('#input_schoolCourse').val();
               var schoolQualification = $('#input_schoolQualification').val();
               // alert(schoolName);
@@ -115,8 +144,10 @@
                       'schoolNum': schoolNum,
                       'schoolName': schoolName,
                       'schoolCountry': schoolCountry,
-                      'schoolStartDate': schoolStartDate,
-                      'schoolEndDate': schoolEndDate,
+                      'schoolStartYear': schoolStartYear,
+                      'schoolEndYear': schoolEndYear,
+                      'schoolStartMonth': schoolStartMonth,
+                      'schoolEndMonth': schoolEndMonth,
                       'schoolCourse': schoolCourse,
                       'schoolQualification': schoolQualification,
                   },
@@ -137,8 +168,10 @@
           $('#btn_addSchool_continue').click(function () {
               var schoolName = $('#input_schoolName').val();
               var schoolCountry = $('#input_schoolCountry').val();
-              var schoolStartDate = $('#input_schoolStartDate').val();
-              var schoolEndDate = $('#input_schoolEndDate').val();
+              var schoolStartYear = $('#input_schoolStartYear').val();
+              var schoolEndYear = $('#input_schoolEndYear').val();
+              var schoolStartMonth = $('#input_schoolStartMonth').val();
+              var schoolEndMonth = $('#input_schoolEndMonth').val();
               var schoolCourse = $('#input_schoolCourse').val();
               var schoolQualification = $('#input_schoolQualification').val();
 
@@ -146,10 +179,13 @@
                   headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}'},
                   url: '/temp_info_save/schoolChange',
                   data: {
+                      'schoolNum': schoolNum,
                       'schoolName': schoolName,
                       'schoolCountry': schoolCountry,
-                      'schoolStartDate': schoolStartDate,
-                      'schoolEndDate': schoolEndDate,
+                      'schoolStartYear': schoolStartYear,
+                      'schoolEndYear': schoolEndYear,
+                      'schoolStartMonth': schoolStartMonth,
+                      'schoolEndMonth': schoolEndMonth,
                       'schoolCourse': schoolCourse,
                       'schoolQualification': schoolQualification,
                   },

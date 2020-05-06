@@ -2,38 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e8cf48c-58aa-4667-a455-05a386cc0352" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/personal/review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/personalise/review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/professional/review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profile/review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/references/review.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/social/review.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/PersonalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/PersonalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/PersonaliseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/PersonaliseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfessionalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfessionalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ReferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ReferenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/SocialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/SocialController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/icons/1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/icons/2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugin/font-awesome/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/plugin/font-awesome/fontawesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/education/school/schoolAdd.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/education/school/schoolAdd.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/education/school/schoolCourse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/education/school/schoolCourse.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/payment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payment/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/personal/skill.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/personal/skill.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/professional/skill.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/professional/skill.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/references/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/references/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/social/media.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/social/media.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/workExperience/journey2/lastJob.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/workExperience/journey2/lastJob.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/personalise/review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/personalise/review.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/references/review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/references/review.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/workExperience/journey1/addJob.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/workExperience/journey1/addJob.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -51,11 +31,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="521">
-                    <caret line="784" column="20" selection-start-line="784" selection-start-column="20" selection-end-line="784" selection-end-column="20" />
+                  <state relative-caret-position="2211">
+                    <caret line="910" column="47" selection-start-line="910" selection-start-column="46" selection-end-line="910" selection-end-column="47" />
                     <folding>
                       <element signature="e#45#81#0#PHP" expanded="true" />
                     </folding>
@@ -66,8 +46,8 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="27">
-                    <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+                  <state relative-caret-position="625">
+                    <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
                     <folding>
                       <element signature="e#55#91#0#PHP" expanded="true" />
                     </folding>
@@ -75,11 +55,32 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="105">
+                    <caret line="109" column="71" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="71" />
+                    <folding>
+                      <element signature="e#55#91#0#PHP" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="339">
-                    <caret line="196" column="74" lean-forward="true" selection-start-line="196" selection-start-column="74" selection-end-line="196" selection-end-column="74" />
+                  <state relative-caret-position="105">
+                    <caret line="421" column="39" selection-start-line="421" selection-start-column="25" selection-end-line="421" selection-end-column="39" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="443">
+                    <caret line="560" column="31" selection-start-line="560" selection-start-column="18" selection-end-line="560" selection-end-column="31" />
                   </state>
                 </provider>
               </entry>
@@ -99,44 +100,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="219" />
+          <entry key="Blade" value="230" />
           <entry key="CSS" value="10" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="89" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PHP" value="92" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="SVG" value="1" />
           <entry key="htaccess" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="17991" />
+          <entry key="Blade" value="18681" />
           <entry key="CSS" value="2204" />
           <entry key="JavaScript" value="16" />
-          <entry key="PHP" value="14028" />
+          <entry key="PHP" value="14454" />
+          <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1352">
-              <caret line="77" column="77" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/SocialController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="28" selection-end-column="3" />
-              <folding>
-                <element signature="e#55#91#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="214">
+              <caret line="105" column="71" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -144,29 +134,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layout/base.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="81" column="35" lean-forward="true" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+            <state relative-caret-position="616">
+              <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
+        <entry file="file://$PROJECT_DIR$/resources/views/workExperience/review.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="148" column="29" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="29" />
+            <state relative-caret-position="500">
+              <caret line="583" column="36" selection-start-line="583" selection-start-column="23" selection-end-line="583" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/ReferenceController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/personalise/review.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="130">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey1/review.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
               <folding>
                 <element signature="e#55#91#0#PHP" expanded="true" />
               </folding>
@@ -178,25 +185,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/references/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="120" column="41" lean-forward="true" selection-end-line="176" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/references/review.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolCourse.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+              <caret line="120" column="41" selection-end-line="176" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -204,24 +193,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey1/addJob.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+            <state relative-caret-position="493">
+              <caret line="164" column="54" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/professional/review.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="87" selection-end-column="21" />
-              <folding>
-                <element signature="e#1814#2280#0#HTML" />
-                <element signature="e#2293#2759#0#HTML" />
-                <element signature="e#2772#3238#0#HTML" />
-                <element signature="e#3251#3717#0#HTML" />
-                <element signature="e#3730#4196#0#HTML" />
-              </folding>
+            <state relative-caret-position="656">
+              <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/references/review.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -238,25 +229,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>{{ Session::get('journey2Company</find>
-      <find>{{ Session::get('journey1Country</find>
-      <find>schoolName</find>
-      <find>schoolEndDate</find>
-      <find>journey1</find>
-      <find>['companies']</find>
-      <find>get('jobNum')</find>
-      <find>Company</find>
-      <find>Session::put('jobNum</find>
-      <find>.$i</find>
-      <find>col-md-3</find>
-      <find>col-md-8</find>
-      <find>text-right</find>
-      <find>form-group row</find>
-      <find>col-md-4 text</find>
-      <find>facebook</find>
-      <find>input-lg</find>
-      <find>form-control-lg</find>
-      <find>disabled</find>
       <find>job</find>
       <find>Date2</find>
       <find>Date3</find>
@@ -268,38 +240,57 @@
       <find>personlise</find>
       <find>professional</find>
       <find>#mediaType</find>
+      <find>schoolAdd</find>
+      <find>Year</find>
+      <find>schoolChange</find>
+      <find>schoolRevie</find>
+      <find>.$schoolNum</find>
+      <find>journey1</find>
+      <find>S</find>
+      <find>Date</find>
+      <find>disabled</find>
+      <find>companyCountry</find>
+      <find>companyCity</find>
+      <find>companyJob</find>
+      <find>jobSummary</find>
+      <find>job2</find>
+      <find>input_</find>
+      <find>journey2JobA</find>
+      <find>Month</find>
+      <find>journey2AddJob</find>
+      <find>1</find>
     </findStrings>
     <replaceStrings>
-      <replace>professional</replace>
-      <replace>username_link</replace>
-      <replace>Username_Link</replace>
-      <replace>mediaType</replace>
-      <replace>MediaType</replace>
-      <replace>cardNumber</replace>
-      <replace>cardHolderName</replace>
-      <replace>expiryDate</replace>
-      <replace>password</replace>
-      <replace>payment</replace>
-      <replace>{{ Session::get('companyName</replace>
-      <replace>companyName</replace>
-      <replace>jobEndDate</replace>
-      <replace>journey2</replace>
-      <replace>['schools']</replace>
-      <replace>School</replace>
-      <replace>1</replace>
-      <replace>col-md-4</replace>
-      <replace>form-control</replace>
-      <replace>float-left</replace>
-      <replace>div_form_group form-group row</replace>
-      <replace>col-md-9</replace>
-      <replace>form-control form-control-lg</replace>
-      <replace>school</replace>
-      <replace>{{ Session::get('companyCountry</replace>
-      <replace>Month3</replace>
-      <replace>personal</replace>
       <replace>personalise</replace>
       <replace>social</replace>
       <replace>#socialMediaType</replace>
+      <replace>End</replace>
+      <replace>journey1Company</replace>
+      <replace>journey2Company1</replace>
+      <replace>journey2Company2</replace>
+      <replace>journey2Company3</replace>
+      <replace>journey2Country3</replace>
+      <replace>journey1Country</replace>
+      <replace>journey2Country1</replace>
+      <replace>journey2Country2</replace>
+      <replace>journey1City</replace>
+      <replace>journey2City1</replace>
+      <replace>journey2City2</replace>
+      <replace>journey2City3</replace>
+      <replace>journey1Job</replace>
+      <replace>journey2Job1</replace>
+      <replace>journey2Job2</replace>
+      <replace>journey2Job3</replace>
+      <replace>journey1Duty</replace>
+      <replace>journey2Duty1</replace>
+      <replace>journey2Duty2</replace>
+      <replace>journey2Duty3</replace>
+      <replace>job2StartMonth3</replace>
+      <replace>lastJob</replace>
+      <replace>Month</replace>
+      <replace>Year</replace>
+      <replace>2</replace>
+      <replace>3</replace>
     </replaceStrings>
     <dirStrings>
       <dir>E:\Freelancer Tasks\Ricky Keele\Questionnaires_PHP_Millie\project</dir>
@@ -314,28 +305,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/education/school/schoolQualification.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/workExperience/addJob.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/country.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/city.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/job.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/startJob.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/duty.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/addJob.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/country.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/city.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/job.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/duty.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php" />
-        <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/personalise/website.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/education/education.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/workingNow.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/education/school/schoolName.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/education/school/schoolGraduate.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php" />
         <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/lastJob.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/professional/skill.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/SocialModel.php" />
         <option value="$PROJECT_DIR$/public/assets/plugin/font-awesome/font-awesome.css" />
@@ -344,8 +328,6 @@
         <option value="$PROJECT_DIR$/resources/views/product/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/payment/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard/dashboard1.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/education/school/schoolAdd.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfileController.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/review.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfessionalController.php" />
@@ -354,17 +336,26 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/PersonalController.php" />
         <option value="$PROJECT_DIR$/resources/views/personal/review.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/PersonaliseController.php" />
-        <option value="$PROJECT_DIR$/resources/views/personalise/review.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php" />
         <option value="$PROJECT_DIR$/resources/views/social/review.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/SocialController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/ReferenceController.php" />
-        <option value="$PROJECT_DIR$/resources/views/references/review.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layout/base.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/main.css" />
-        <option value="$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/education/school/schoolCourse.blade.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php" />
+        <option value="$PROJECT_DIR$/resources/views/education/school/schoolAdd.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layout/base.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/workExperience/journey1/addJob.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/workExperience/review.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php" />
+        <option value="$PROJECT_DIR$/resources/views/personalise/review.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/references/review.blade.php" />
       </list>
     </option>
   </component>
@@ -514,19 +505,6 @@
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -534,6 +512,24 @@
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="workExperience" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -581,28 +577,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588388650871</updated>
-      <workItem from="1588388653794" duration="232817000" />
+      <workItem from="1588388653794" duration="246603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232817000" />
+    <option name="totallyTimeSpent" value="246603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="13" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.14303179" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.14303179" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.32915717" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32915717" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32915717" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32915717" />
       <window_info anchor="bottom" id="Run" order="8" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
@@ -644,34 +641,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/country.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/city.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="97" selection-start-line="5" selection-start-column="97" selection-end-line="5" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/job.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/duty.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="39" column="83" lean-forward="true" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/education/education.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -725,26 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3042">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="389" column="14" selection-start-line="389" selection-start-column="14" selection-end-line="389" selection-end-column="14" />
-          <folding>
-            <element signature="e#605#4723#0#HTML" />
-            <element signature="e#4863#9497#0#HTML" />
-            <element signature="e#4795#9360#0#HTML" />
-            <element signature="e#9432#13997#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/SocialModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -786,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolAdd.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/0a183cd49da7a567ddadf9b341f192d53d2ebd30.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -817,30 +759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="128" column="89" selection-start-line="128" selection-start-column="89" selection-end-line="128" selection-end-column="89" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="87" />
           <folding>
             <element signature="e#55#91#0#PHP" expanded="true" />
           </folding>
@@ -858,16 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="8" selection-start-line="8" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,13 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="41" column="45" selection-start-line="40" selection-start-column="22" selection-end-line="41" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/personalise/review.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3458">
-          <caret line="133" column="56" lean-forward="true" selection-start-line="133" selection-start-column="56" selection-end-line="133" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -986,6 +891,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="148" column="29" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolCourse.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/ReferenceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -996,72 +922,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolAdd.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="784" column="20" selection-start-line="784" selection-start-column="20" selection-end-line="784" selection-end-column="20" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="185" column="53" selection-start-line="185" selection-start-column="53" selection-end-line="185" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/base.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/EducationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="81" column="35" lean-forward="true" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+        <state relative-caret-position="500">
+          <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
           <folding>
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#55#91#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="148" column="29" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/references/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="120" column="41" lean-forward="true" selection-end-line="176" selection-end-column="11" />
+          <caret line="120" column="41" selection-end-line="176" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="196" column="74" lean-forward="true" selection-start-line="196" selection-start-column="74" selection-end-line="196" selection-end-column="74" />
+        <state relative-caret-position="625">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
+          <folding>
+            <element signature="e#55#91#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/references/review.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/addJob.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey1/review.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/base.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        <state relative-caret-position="616">
+          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolCourse.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/questionnaires/WorkExperienceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="47" lean-forward="true" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state relative-caret-position="105">
+          <caret line="109" column="71" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="71" />
+          <folding>
+            <element signature="e#55#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/addJob.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey1/addJob.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        <state relative-caret-position="493">
+          <caret line="164" column="54" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/education/school/schoolReview.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="421" column="39" selection-start-line="421" selection-start-column="25" selection-end-line="421" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1352">
-          <caret line="77" column="77" selection-start-line="77" selection-start-column="77" selection-end-line="77" selection-end-column="77" />
+        <state relative-caret-position="214">
+          <caret line="105" column="71" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/journey2/review.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="560" column="31" selection-start-line="560" selection-start-column="18" selection-end-line="560" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Form/TempFormController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2211">
+          <caret line="910" column="47" selection-start-line="910" selection-start-column="46" selection-end-line="910" selection-end-column="47" />
+          <folding>
+            <element signature="e#45#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/workExperience/review.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="583" column="36" selection-start-line="583" selection-start-column="23" selection-end-line="583" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/personalise/review.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/references/review.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>

@@ -129,4 +129,11 @@ class WorkExperienceController extends Controller
     $data['companies'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
     return view('workExperience/journey2/review', compact("data"));
   }
+
+  public function review()
+  {
+    $data['sections'] = Section::orderBy('sectionOrder', 'asc')->get();
+    $data['companies'] = TempInfoModel::where('auth_id', Session::get('auth_id'))->get();
+    return view('workExperience/review', compact("data"));
+  }
 }
